@@ -1,5 +1,4 @@
 import Header from "@/app/components/Header";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Lateef } from "next/font/google";
 import "./globals.css";
 
