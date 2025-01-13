@@ -5,6 +5,7 @@ import SectionTitle from "@/app/components/SectionTitle";
 import Popup from "@/app/components/Popup";
 import Footer from "@/app/components/Footer";
 import BlogPreview from "./components/BlogPreview";
+import ListPreview from "./components/ListPreview";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -42,23 +43,64 @@ export default function Home() {
             content="I’ve been closely monitoring the reports of pro-Palestinian protests at various U.S. university campuses, a topic widely covered by Korean media. My interest in the Israeli-Palestinian conflict is not new; it was the subject of my History EE, focusing on the Balfour Declaration and its ongoing implications."
             link="#"
           />
+          {/*Monthly highlights section*/}
           <SectionTitle title="monthly highlights" />
-          <div className="flex justify-center gap-[1000px] px-6 py-10 font-lateef mt-3 font-normal text-3xl">
-            {/* Left Column */}
-            <div className="flex flex-col">
-              <h2 className="font-normal">wrapping up 2024</h2>
-              <p className="text-descriptionGray mt-2">
-                been a tough year. hope y'all have a great year ahead
-              </p>
-            </div>
-            {/* Right Column */}
-            <div className="flex flex-col text-right">
-              <h2>januaray</h2>
-            </div>
-          </div>
-
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2025"
+            date="january"
+            className="mt-[100px]"
+          />
+          <ListPreview
+            title="mock up 2024"
+            description="what i have been up to in 2024"
+            date="feburary"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+            date="march"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+            date="april"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+            date="may"
+          />
+          {/*Currently reading section*/}
           <SectionTitle title="currently reading" />
+          {/*What I've been learning section*/}
           <SectionTitle title="what i've been learning" />
+          <ListPreview
+            title="spring boot 3"
+            description="learning it to make a website"
+            date="january"
+            className="mt-[100px]"
+          />
+          <ListPreview
+            title="mock up 2024"
+            description="what i have been up to in 2024"
+            date="feburary"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="learning it to make a website"
+            date="march"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+            date="april"
+          />
+          <ListPreview
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+            date="may"
+          />
           <Footer />
         </div>
       </main>
