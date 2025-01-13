@@ -11,6 +11,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         underlineBlue: "#5AA8D6",
+        descriptionGray: "#A29999",
       },
       fontFamily: {
         lateef: ["var(--font-lateef)", "sans-serif"],
