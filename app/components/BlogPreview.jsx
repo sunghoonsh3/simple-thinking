@@ -8,8 +8,8 @@ export default function BlogPreview({
     <div className="flex justify-center gap-44 items-center font-lateef mt-[100px]">
       {/* Left section: Title and Date */}
       <div className="flex flex-col">
-        <h2 className="font-normal text-2xl">{title}</h2>
-        <p className="text-sm text-descriptionGray">{date}</p>
+        <h2 className="font-normal text-3xl">{title}</h2>
+        <p className="text-descriptionGray text-lg">{date}</p>
       </div>
 
       {/* Right section: Blog Body */}
@@ -19,7 +19,7 @@ export default function BlogPreview({
           href={link}
           className="underline decoration-underlineBlue decoration-1 underline-offset-4 mt-4 inline-block"
         >
-          Continue reading -{">"}
+          continue reading -{">"}
         </a>
       </div>
     </div>
