@@ -10,6 +10,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        underlineBlue: "#5AA8D6",
       },
       fontFamily: {
         lateef: ["var(--font-lateef)", "sans-serif"],
