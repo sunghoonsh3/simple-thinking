@@ -6,6 +6,7 @@ import Popup from "@/app/components/Popup";
 import Footer from "@/app/components/Footer";
 import BlogPreview from "./components/BlogPreview";
 import ListPreview from "./components/ListPreview";
+import MiddleTextBlock from "./components/MiddleTextBlock";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -73,6 +74,22 @@ export default function Home() {
           />
           {/*Currently reading section*/}
           <SectionTitle title="currently reading" />
+          <MiddleTextBlock
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+          />
+          <MiddleTextBlock
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+          />
+          <MiddleTextBlock
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+          />
+          <MiddleTextBlock
+            title="wrapping up 2024"
+            description="what i have been up to in 2024"
+          />
           {/*What I've been learning section*/}
           <SectionTitle title="what i've been learning" />
           <ListPreview
