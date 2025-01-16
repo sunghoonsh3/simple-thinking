@@ -1,3 +1,3 @@
 export default function Politics() {
-  return <p>politics</p>;
+  return <p>Politics</p>;
 }
