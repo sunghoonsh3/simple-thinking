@@ -15,7 +15,9 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center font-lateef">
         {/* Logo Section */}
         <div className="text-2xl font-lateef font-normal ml-12">
-          <Link href="/">simple thinking</Link>
+          <Link href="/" onClick={() => handleClick()}>
+            simple thinking
+          </Link>
         </div>
 
         {/* Navigation Links */}
@@ -25,9 +27,9 @@ export default function Header() {
               <li key={item} className="relative">
                 <Link
                   href={`/${item}`}
-                  className={`${
+                  className={`inline-block transition-transform duration-300 ${
                     activeLink === item
-                      ? "underline decoration-underlineBlue decoration-1 underline-offset-[6px] -translate-y-10"
+                      ? "underline decoration-underlineBlue decoration-1 underline-offset-[6px] -translate-y-1"
                       : ""
                   }`}
                   onClick={() => handleClick(item)} // Set active link on click
