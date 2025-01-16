@@ -1,3 +1,7 @@
+"use client";
+
+import Slogan from "@/app/components/Slogan";
+
 export default function Startup() {
-  return <p>startup</p>;
+  return <Slogan />;
 }

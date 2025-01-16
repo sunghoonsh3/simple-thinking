@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
-  const [activeLink, setActiveLink] = useState(""); // State to track the active link
+  const [activeLink, setActiveLink] = useState("");
 
   const handleClick = (link) => {
-    setActiveLink(link); // Update the active link state
+    setActiveLink(link);
   };
 
   return (
@@ -19,8 +19,7 @@ export default function Header() {
             simple thinking
           </Link>
         </div>
-
-        {/* Navigation Links */}
+        {/* Navigation */}
         <nav>
           <ul className="flex space-x-6 text-2xl font-lateef font-normal">
             {["books", "politics", "startup", "life", "about"].map((item) => (
@@ -32,7 +31,7 @@ export default function Header() {
                       ? "underline decoration-underlineBlue decoration-1 underline-offset-[6px] -translate-y-1"
                       : ""
                   }`}
-                  onClick={() => handleClick(item)} // Set active link on click
+                  onClick={() => handleClick(item)}
                 >
                   {item}
                 </Link>
