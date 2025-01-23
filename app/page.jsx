@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       <main className="p-4">
         {/* Allows the user to see one section at a time */}
-        <div className="h-screen w-full">
+        <div className="">
           <Popup />
           <section
             className="
@@ -133,11 +133,8 @@ export default function Home() {
               date="may"
             />
           </section>
-
           {/* Footer */}
-          <section>
-            <Footer />
-          </section>
+          <Footer />
         </div>
       </main>
     </div>
