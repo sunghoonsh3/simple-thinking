@@ -94,7 +94,7 @@ export default function Home() {
               description="what i have been up to in 2024"
             />
             <MiddleTextBlock
-              title="wrapping up 2024"
+              title="어떤 생각들은 나의 세계가 된다 by 이충녕"
               description="what i have been up to in 2024"
             />
           </section>

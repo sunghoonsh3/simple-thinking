@@ -1,6 +1,11 @@
 import Header from "@/app/components/Header";
 import { Lateef } from "next/font/google";
+import { Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
+
+// need to import korean font
+
+// thinking about Nanum Pen Script, Dongle, Hi Melody, Gowun Batang, Gamja Flower, Poor Story, Cute Font
 
 // import lateef font
 const lateef = Lateef({
