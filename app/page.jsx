@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <div>
       <main className="p-4">
-        {/* Main scroll container, no scroll-snap classes */}
-        <div className="h-screen w-screen overflow-y-auto">
+        {/* Allows the user to see one section at a time */}
+        <div className="h-screen w-full">
           <Popup />
           <section
             className="
-          h-screen 
+          h-[calc(100vh-110px)]
           w-full
           flex 
           items-center 
@@ -29,12 +29,12 @@ export default function Home() {
             <Slogan />
           </section>
           {/* 2) Recent Blog */}
-          <section className="h-screen w-screen overflow-y-auto">
+          <section className="h-screen w-full">
             <SectionTitle title="recent blog" />
             <BlogPreview
               title="what i love about nd"
               date="Friday, December 27, 2024"
-              content="I’ve been closely monitoring ..."
+              content="I’ve been closely monitoring the reports of pro-Palestinian protests at various U.S. university campuses, a topic widely covered by Korean media. My interest in the Israeli-Palestinian conflict is not new; it was the subject of my History EE, focusing on the Balfour Declaration and its ongoing implications."
               link="#"
             />
           </section>
@@ -43,13 +43,7 @@ export default function Home() {
           {/* Removed snap-start here */}
           <section
             className="
-              h-screen 
-              w-full
-              flex 
-              flex-col 
-              items-center 
-              justify-center
-            "
+              h-screen w-full"
           >
             <SectionTitle title="monthly highlights" />
             <ListPreview
@@ -83,12 +77,7 @@ export default function Home() {
           {/* 4) Currently reading */}
           <section
             className="
-              h-screen
-              w-full
-              flex 
-              flex-col 
-              items-center 
-              justify-center
+              h-screen w-full 
             "
           >
             <SectionTitle title="currently reading" />
@@ -113,12 +102,7 @@ export default function Home() {
           {/* 5) What I've been learning */}
           <section
             className="
-              h-screen
-              w-full
-              flex 
-              flex-col 
-              items-center 
-              justify-center
+              h-screen w-full
             "
           >
             <SectionTitle title="what i've been learning" />

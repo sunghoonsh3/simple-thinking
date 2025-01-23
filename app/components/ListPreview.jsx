@@ -9,19 +9,28 @@ export default function ListPreview({
   return (
     <div
       className={clsx(
-        "flex justify-center mt-10 px-6 font-lateef font-normal text-3xl", // Center entire div
+        "flex justify-center mt-10 px-6 font-lateef font-normal text-3xl",
         className
       )}
     >
       {/* Inner container with max width */}
-      <div className="flex justify-start gap-x-[1000px] w-full max-w-[1500px]">
+      <div
+        className="
+          grid
+          grid-cols-[400px_auto]  /* first column 400px wide, second grows */
+          gap-x-[1000px]                /* horizontal gap between columns */
+          w-full
+          max-w-[1500px]
+        "
+      >
         {/* Left Column */}
-        <div className="flex flex-col items-start">
+        <div>
           <h2 className="font-normal">{title}</h2>
           <p className="text-descriptionGray mt-2">{description}</p>
         </div>
-        {/* Right Column */}
-        <div className="flex flex-col items-start">
+
+        {/* Right Column (date), left-aligned */}
+        <div>
           <h2>{date}</h2>
         </div>
       </div>
