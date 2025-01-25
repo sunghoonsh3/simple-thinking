@@ -53,24 +53,19 @@ export default function Home() {
               className="mt-[100px]"
             />
             <ListPreview
-              title="mock up 2024"
-              description="what i have been up to in 2024"
+              title="it's not feburary yet"
+              description="just a placeholder :)"
               date="feburary"
             />
             <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2024"
+              title="not march as well"
+              description="again, just a placeholder :)"
               date="march"
             />
             <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2024"
+              title="ifykyk"
+              description="april is my fav month"
               date="april"
-            />
-            <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2024"
-              date="may"
             />
           </section>
 
@@ -83,39 +78,39 @@ export default function Home() {
             <SectionTitle title="currently reading" />
             <MiddleTextBlock
               title="Human Acts by Han Kang"
-              description="what i have been up to in 2024"
+              description="the military dictatorship and the Gwangju Uprising"
             />
             <MiddleTextBlock
               title="Engineering in Plain Sight by Grady Hillhouse"
-              description="what i have been up to in 2024"
+              description="overlooked infrastructure and everyday engineering"
             />
             <MiddleTextBlock
               title="The Coming Wave by Michael & Mustafa"
-              description="what i have been up to in 2024"
+              description="the future of tech and its impact on society"
             />
             <MiddleTextBlock
               title="Full Stack Development by Juha Hinkula"
-              description="what i have been up to in 2024"
+              description="building applications with React and Spring Boot"
             />
             <SectionTitle title="Korean" className="mt-20" />
             <MiddleTextBlock
               title="실리콘밸리는 무엇을 기획하고 개발하는가 by Han Chen"
-              description="what i have been up to in 2024"
+              description="how to build customer-centric products with psychology"
               className="font-gowunBatang text-xl font-semibold"
             />
             <MiddleTextBlock
               title="어떤 생각들은 나의 세계가 된다 by 이충녕"
-              description="what i have been up to in 2024"
+              description="philosophical questions and answers for everyday life"
               className="font-gowunBatang text-xl font-semibold"
             />
             <MiddleTextBlock
               title="뇌, 마케팅의 비밀을 열다 by Hans-Georg"
-              description="what i have been up to in 2024"
+              description="how to execute effective marketing with psychology"
               className="font-gowunBatang text-xl font-semibold"
             />
             <MiddleTextBlock
               title="가장 젊은 날의 철학 by 이충녕"
-              description="what i have been up to in 2024"
+              description="philosophical questions and answers for the youth"
               className="font-gowunBatang text-xl font-semibold"
             />
           </section>
@@ -134,24 +129,19 @@ export default function Home() {
               className="mt-[100px]"
             />
             <ListPreview
-              title="mock up 2024"
-              description="what i have been up to in 2024"
-              date="feburary ~"
+              title="guitar"
+              description="i can prolly play my favorite song someday"
+              date="january ~"
             />
             <ListPreview
-              title="wrapping up 2024"
-              description="learning it to make a website"
-              date="march ~"
+              title="typescript"
+              description="need it for my intership"
+              date="january ~"
             />
             <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2024"
-              date="april ~"
-            />
-            <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2024"
-              date="may ~"
+              title="japanese"
+              description="so i can talk better with my friends"
+              date="january ~"
             />
           </section>
           {/* Footer */}
