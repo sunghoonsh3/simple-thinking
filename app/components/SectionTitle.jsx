@@ -1,10 +1,17 @@
+import clsx from "clsx";
+
 // components/SectionTitle.js
-export default function SectionTitle({ title = "default title" }) {
+export default function SectionTitle({
+  title = "default title",
+  className = "",
+}) {
   return (
-    <div className="flex justify-center items-center">
+    <div
+      className={clsx("flex justify-center items-center text-3xl", className)}
+    >
       {" "}
       {/* mt-[850px] */}
-      <p className="text-3xl font-lateef font-normal underline decoration-underlineBlue decoration-1 underline-offset-[6px]">
+      <p className="font-lateef font-normal underline decoration-underlineBlue decoration-1 underline-offset-[6px]">
         {title}
       </p>
     </div>

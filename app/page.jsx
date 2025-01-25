@@ -82,23 +82,44 @@ export default function Home() {
           >
             <SectionTitle title="currently reading" />
             <MiddleTextBlock
-              title="wrapping up 2024"
+              title="Human Acts by Han Kang"
               description="what i have been up to in 2024"
             />
             <MiddleTextBlock
-              title="wrapping up 2024"
+              title="Engineering in Plain Sight by Grady Hillhouse"
               description="what i have been up to in 2024"
             />
             <MiddleTextBlock
-              title="wrapping up 2024"
+              title="The Coming Wave by Michael & Mustafa"
               description="what i have been up to in 2024"
+            />
+            <MiddleTextBlock
+              title="Full Stack Development by Juha Hinkula"
+              description="what i have been up to in 2024"
+            />
+            <SectionTitle title="Korean" className="mt-20" />
+            <MiddleTextBlock
+              title="실리콘밸리는 무엇을 기획하고 개발하는가 by Han Chen"
+              description="what i have been up to in 2024"
+              className="font-gowunBatang text-xl font-semibold"
             />
             <MiddleTextBlock
               title="어떤 생각들은 나의 세계가 된다 by 이충녕"
               description="what i have been up to in 2024"
+              className="font-gowunBatang text-xl font-semibold"
+            />
+            <MiddleTextBlock
+              title="뇌, 마케팅의 비밀을 열다 by Hans-Georg"
+              description="what i have been up to in 2024"
+              className="font-gowunBatang text-xl font-semibold"
+            />
+            <MiddleTextBlock
+              title="가장 젊은 날의 철학 by 이충녕"
+              description="what i have been up to in 2024"
+              className="font-gowunBatang text-xl font-semibold"
             />
           </section>
-
+          <div className="pb-64"></div>
           {/* 5) What I've been learning */}
           <section
             className="
@@ -109,28 +130,28 @@ export default function Home() {
             <ListPreview
               title="spring boot 3"
               description="learning it to make a website"
-              date="january"
+              date="january ~"
               className="mt-[100px]"
             />
             <ListPreview
               title="mock up 2024"
               description="what i have been up to in 2024"
-              date="feburary"
+              date="feburary ~"
             />
             <ListPreview
               title="wrapping up 2024"
               description="learning it to make a website"
-              date="march"
+              date="march ~"
             />
             <ListPreview
               title="wrapping up 2024"
               description="what i have been up to in 2024"
-              date="april"
+              date="april ~"
             />
             <ListPreview
               title="wrapping up 2024"
               description="what i have been up to in 2024"
-              date="may"
+              date="may ~"
             />
           </section>
           {/* Footer */}

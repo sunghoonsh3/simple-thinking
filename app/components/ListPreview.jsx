@@ -9,7 +9,7 @@ export default function ListPreview({
   return (
     <div
       className={clsx(
-        "flex justify-center mt-10 px-6 font-lateef font-normal text-3xl",
+        "flex justify-center mt-10 px-6 font-lateef font-normal text-3xl whitespace-nowrap",
         className
       )}
     >

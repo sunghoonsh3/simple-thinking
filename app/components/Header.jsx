@@ -14,7 +14,7 @@ export default function Header() {
     <header className="text-black p-4 pt-10">
       <div className="container mx-auto flex justify-between items-center font-lateef">
         {/* Logo Section */}
-        <div className="text-2xl font-lateef font-normal ml-12">
+        <div className="text-2xl font-normal ml-12">
           <Link href="/" onClick={() => handleClick()}>
             simple thinking
           </Link>

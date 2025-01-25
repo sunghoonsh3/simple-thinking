@@ -15,6 +15,13 @@ export default {
       },
       fontFamily: {
         lateef: ["var(--font-lateef)", "sans-serif"],
+        nanumPenScript: ["var(--font-nanumPenScript)", "cursive"],
+        dongle: ["var(--font-dongle)", "sans-serif"],
+        hiMelody: ["var(--font-hiMelody)", "cursive"],
+        gowunBatang: ["var(--font-gowunBatang)", "serif"],
+        gamjaFlower: ["var(--font-gamjaFlower)", "cursive"],
+        poorStory: ["var(--font-poorStory)", "cursive"],
+        cuteFont: ["var(--font-cuteFont)", "cursive"],
       },
     },
     plugins: [],
