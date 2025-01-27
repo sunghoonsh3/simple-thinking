@@ -7,7 +7,10 @@ export default function SectionTitle({
 }) {
   return (
     <div
-      className={clsx("flex justify-center items-center text-3xl", className)}
+      className={clsx(
+        "flex justify-center items-center xl:text-2xl 2xl:text-3xl",
+        className
+      )}
     >
       {" "}
       {/* mt-[850px] */}
