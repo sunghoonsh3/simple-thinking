@@ -17,9 +17,8 @@ export default function ListPreview({
       <div
         className="
           grid
-          grid-cols-[400px_auto]  /* first column 400px wide, second grows */
-          2xl:gap-x-[1000px]
-          xl:gap-x-[500px]                 /* horizontal gap between columns */
+          justify-center
+          grid-cols-[500px_500px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
           w-full
           max-w-[1500px]
         "
@@ -31,8 +30,8 @@ export default function ListPreview({
         </div>
 
         {/* Right Column (date), left-aligned */}
-        <div>
-          <h2>{date}</h2>
+        <div className="grid justify-end">
+          <h2 className="grid grid-cols-[50px] justify-start">{date}</h2>
         </div>
       </div>
     </div>
