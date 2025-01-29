@@ -9,7 +9,7 @@ export default function ListPreview({
   return (
     <div
       className={clsx(
-        "flex justify-center mt-10 px-6 font-lateef font-normal xl:text-2xl 2xl:text-3xl whitespace-nowrap",
+        "flex justify-center mt-10 px-6 font-lateef font-normal text-2xl 2xl:text-3xl whitespace-nowrap",
         className
       )}
     >
@@ -18,7 +18,10 @@ export default function ListPreview({
         className="
           grid
           justify-center
-          grid-cols-[500px_500px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
+          sm:grid-cols-[250px_250px]
+          lg:grid-cols-[320px_320px]
+          xl:grid-cols-[500px_500px]
+          2xl:grid-cols-[600px_600px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
           w-full
           max-w-[1500px]
         "
