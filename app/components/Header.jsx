@@ -14,14 +14,14 @@ export default function Header() {
     <header className="text-black p-4 pt-10">
       <div className="container mx-auto flex justify-between items-center font-lateef">
         {/* Logo Section */}
-        <div className="text-2xl font-normal ml-12">
+        <div className="text-2xl font-normal text-nowrap ml-12">
           <Link href="/" onClick={() => handleClick()}>
             simple thinking
           </Link>
         </div>
         {/* Navigation */}
         <nav>
-          <ul className="flex space-x-6 text-2xl font-lateef font-normal">
+          <ul className="flex space-x-6 text-2xl font-lateef mr-12 font-normal">
             {["books", "politics", "startup", "life", "about"].map((item) => (
               <li key={item} className="relative">
                 <Link
