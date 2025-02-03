@@ -18,6 +18,7 @@ export default function ListPreview({
         className="
           grid
           justify-center
+          grid-cols-[170px_170px]
           sm:grid-cols-[320px_320px]
           xl:grid-cols-[500px_500px]
           2xl:grid-cols-[600px_600px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
@@ -26,14 +27,16 @@ export default function ListPreview({
         "
       >
         {/* Left Column */}
-        <div>
+        <div className="text-lg sm:text-2xl">
           <h2 className="font-normal">{title}</h2>
           <p className="text-descriptionGray text-nowrap mt-2">{description}</p>
         </div>
 
         {/* Right Column (date), left-aligned */}
         <div className="grid justify-end">
-          <h2 className="grid grid-cols-[70px] justify-start">{date}</h2>
+          <h2 className="grid grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl justify-start">
+            {date}
+          </h2>
         </div>
       </div>
     </div>

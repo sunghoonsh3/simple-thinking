@@ -20,8 +20,9 @@ export default function Slogan() {
           flex 
           items-center 
           justify-center
-          whitespace-nowrap 
-          text-2xl 
+          whitespace-nowrap
+          text-xl
+          sm:text-2xl 
           transition-opacity
           duration-300
           ${isHovered ? "opacity-0" : "opacity-100"}
@@ -39,7 +40,8 @@ export default function Slogan() {
           items-center 
           justify-center
           whitespace-nowrap
-          text-2xl
+          text-xl
+          sm:text-2xl
           font-lateef 
           font-normal 
           transition-opacity 

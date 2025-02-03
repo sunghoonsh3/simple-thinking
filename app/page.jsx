@@ -94,24 +94,24 @@ export default function Home() {
             />
             <SectionTitle title="Korean" className="mt-20" />
             <MiddleTextBlock
-              title="실리콘밸리는 무엇을 기획하고 개발하는가 by Han Chen"
+              title="실리콘밸리는 무엇을 기획하고 개발하는가 by Han"
               description="how to build customer-centric products with psychology"
-              className="font-gowunBatang text-base 2xl:text-xl font-semibold"
+              className="font-gowunBatang sm:text-lg text-sm 2xl:text-xl font-semibold"
             />
             <MiddleTextBlock
               title="어떤 생각들은 나의 세계가 된다 by 이충녕"
               description="philosophical questions and answers for everyday life"
-              className="font-gowunBatang text-base 2xl:text-xl font-semibold"
+              className="font-gowunBatang text-sm sm:text-lg 2xl:text-xl font-semibold"
             />
             <MiddleTextBlock
               title="뇌, 마케팅의 비밀을 열다 by Hans-Georg"
               description="how to execute effective marketing with psychology"
-              className="font-gowunBatang text-base 2xl:text-xl font-semibold"
+              className="font-gowunBatang text-sm sm:text-lg 2xl:text-xl font-semibold"
             />
             <MiddleTextBlock
               title="가장 젊은 날의 철학 by 이충녕"
               description="philosophical questions and answers for the youth"
-              className="font-gowunBatang text-base 2xl:text-xl font-semibold"
+              className="font-gowunBatang text-sm sm:text-lg 2xl:text-xl font-semibold"
             />
           </section>
           {/* 5) What I've been learning */}

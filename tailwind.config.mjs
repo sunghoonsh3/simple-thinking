@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      // screens: {
+      //   "xs-sm": "600px", // Custom breakpoint between sm (640px) and md (768px)
+      // },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -7,7 +7,7 @@ export default function MiddleTextBlock({
 }) {
   return (
     <div
-      className="flex justify-center mt-10 px-6 font-lateef font-normal sm:text-2xl 2xl:text-3xl" // Center entire div
+      className="flex justify-center mt-10 font-lateef font-normal text-lg sm:text-2xl 2xl:text-3xl" // Center entire div
     >
       {/* Inner container with max width */}
       <div>
