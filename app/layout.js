@@ -1,14 +1,5 @@
 import Header from "@/app/components/Header";
-import {
-  Lateef,
-  Nanum_Pen_Script,
-  Dongle,
-  Hi_Melody,
-  Gowun_Batang,
-  Gamja_Flower,
-  Poor_Story,
-  Cute_Font,
-} from "next/font/google";
+import { Lateef, Gowun_Batang } from "next/font/google";
 import "./globals.css";
 
 // need to import korean font
@@ -22,53 +13,11 @@ const lateef = Lateef({
   variable: "--font-lateef",
 });
 
-const nanumPenScript = Nanum_Pen_Script({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-nanumPenScript",
-});
-
-const dongle = Dongle({
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-dongle",
-});
-
-const hiMelody = Hi_Melody({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-hiMelody",
-});
-
 const gowunBatang = Gowun_Batang({
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-gowunBatang",
-});
-
-const gamjaFlower = Gamja_Flower({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-gamjaFlower",
-});
-
-const poorStory = Poor_Story({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poorStory",
-});
-
-const cuteFont = Cute_Font({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-cuteFont",
 });
 
 export const metadata = {
@@ -78,10 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${lateef.variable} ${nanumPenScript.variable} ${dongle.variable} ${hiMelody.variable} ${gowunBatang.variable} ${gamjaFlower.variable} ${poorStory.variable} ${cuteFont.variable}`}
-    >
+    <html lang="en" className={`${lateef.variable} ${gowunBatang.variable} `}>
       <body>
         <Header />
         {children}
