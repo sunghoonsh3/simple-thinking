@@ -34,7 +34,7 @@ export default function Home() {
             <BlogPreview
               title="my response to fr. jenkins' may 13 statement"
               date="Friday, December 27, 2024"
-              content="I’ve been closely monitoring the reports of pro-Palestinian protests at various U.S. university campuses, a topic widely covered by Korean media. My interest in the Israeli-Palestinian conflict is not new; it was the subject of my History EE, focusing on the Balfour Declaration and its ongoing implications."
+              content="On May 13, Fr. Jenkins, the president of Notre Dame University, issued a statement regarding the recent protest on campus. Here is my response to his statement: Dear Father Jenkins, I am writing to express my sincere concern regarding the University’s decision to allow students to be prosecuted on charges stemming from a peaceful protest."
               link="#"
             />
           </section>
