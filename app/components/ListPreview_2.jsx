@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export default function ListPreview_2({
+export default function ListPreview_25({
   title = "default title",
   description = "default description",
   date = "default date",
@@ -18,11 +18,11 @@ export default function ListPreview_2({
         className="
           grid
           justify-center
-          max-[350px]:grid-cols-[130px_125px]
-          grid-cols-[170px_165px]
-          sm:grid-cols-[320px_315px]
-          xl:grid-cols-[500px_495px]
-          2xl:grid-cols-[600px_595px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
+          max-[350px]:grid-cols-[130px_115px]
+          grid-cols-[170px_155px]
+          sm:grid-cols-[320px_305px]
+          xl:grid-cols-[500px_485px]
+          2xl:grid-cols-[600px_585px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
           w-full
           max-w-[1500px]
         "
