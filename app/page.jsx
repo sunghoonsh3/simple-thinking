@@ -6,6 +6,7 @@ import Popup from "@/app/components/Popup";
 import Footer from "@/app/components/Footer";
 import BlogPreview from "./components/BlogPreview";
 import ListPreview from "./components/ListPreview";
+import ListPreview_2 from "./components/ListPreview_2";
 import MiddleTextBlock from "./components/MiddleTextBlock";
 import Slogan from "./components/Slogan";
 
@@ -124,23 +125,23 @@ export default function Home() {
             "
           >
             <SectionTitle title="what i've been learning" />
-            <ListPreview
+            <ListPreview_2
               title="spring boot 3"
               description="learning it to make a website"
               date="january ~"
               className="mt-[100px]"
             />
-            <ListPreview
+            <ListPreview_2
               title="guitar"
               description="i can prolly play my favorite song someday"
               date="january ~"
             />
-            <ListPreview
+            <ListPreview_2
               title="typescript"
               description="need it for my intership"
               date="january ~"
             />
-            <ListPreview
+            <ListPreview_2
               title="japanese"
               description="so i can talk better with my friends"
               date="january ~"

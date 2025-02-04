@@ -1,0 +1,45 @@
+import clsx from "clsx";
+
+export default function ListPreview_2({
+  title = "default title",
+  description = "default description",
+  date = "default date",
+  className = "",
+}) {
+  return (
+    <div
+      className={clsx(
+        "flex justify-center mt-10 px-6 font-lateef font-normal text-2xl 2xl:text-3xl whitespace-nowrap",
+        className
+      )}
+    >
+      {/* Inner container with max width */}
+      <div
+        className="
+          grid
+          justify-center
+          max-[350px]:grid-cols-[130px_125px]
+          grid-cols-[170px_165px]
+          sm:grid-cols-[320px_315px]
+          xl:grid-cols-[500px_495px]
+          2xl:grid-cols-[600px_595px]   /* first column 400px wide, second grows */              /* horizontal gap between columns */
+          w-full
+          max-w-[1500px]
+        "
+      >
+        {/* Left Column */}
+        <div className="text-lg sm:text-2xl">
+          <h2 className="font-normal">{title}</h2>
+          <p className="text-descriptionGray text-nowrap mt-2">{description}</p>
+        </div>
+
+        {/* Right Column (date), left-aligned */}
+        <div className="grid justify-end">
+          <h2 className="grid grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl justify-start">
+            {date}
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+}
