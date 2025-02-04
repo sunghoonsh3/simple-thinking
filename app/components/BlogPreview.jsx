@@ -5,17 +5,17 @@ export default function BlogPreview({
   link = "#",
 }) {
   return (
-    <div className="flex flex-col mx-2 sm:flex-row justify-center sm:gap-20 md:gap-44 sm:items-center font-lateef mt-[100px]">
+    <div className="flex flex-col mx-2 lg:flex-row justify-center lg:gap-20 xl:gap-40 lg:items-center font-lateef mt-[100px]">
       {/* Left section: Title and Date */}
-      <div className="flex flex-col sm:ml-10 mb-4 sm:mb-0">
-        <h2 className="font-normal text-2xl sm:text-3xl text-nowrap">
+      <div className="flex flex-col lg:ml-10 xl:ml-16 2xl:ml-20 mb-4 lg:mb-0">
+        <h2 className="font-normal text-xl md:text-2xl lg:text-3xl whitespace-nowrap">
           {title}
         </h2>
         <p className="flex items-center text-descriptionGray text-lg">{date}</p>
       </div>
 
       {/* Right section: Blog Body */}
-      <div className="sm:mr-10 max-w-3xl text-lg sm:text-2xl font-normal">
+      <div className="lg:mr-10 lg:min-w-[300px] max-w-3xl text-lg lg:text-2xl font-normal">
         <p>{content}</p>
         <a
           href={link}

@@ -18,6 +18,7 @@ export default function ListPreview({
         className="
           grid
           justify-center
+          max-[350px]:grid-cols-[130px_130px]
           grid-cols-[170px_170px]
           sm:grid-cols-[320px_320px]
           xl:grid-cols-[500px_500px]
