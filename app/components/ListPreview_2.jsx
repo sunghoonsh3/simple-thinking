@@ -35,7 +35,7 @@ export default function ListPreview_25({
 
         {/* Right Column (date), left-aligned */}
         <div className="grid justify-end">
-          <h2 className="grid grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl justify-start">
+          <h2 className="grid grid-cols-[50px] sm:grid-cols-[80px] text-lg sm:text-2xl justify-start">
             {date}
           </h2>
         </div>
