@@ -36,7 +36,7 @@ export default function Home() {
               title="my response to fr. jenkins' may 13 statement"
               date="Friday, December 27, 2024"
               content="On May 13, Fr. Jenkins, the president of Notre Dame University, issued a statement regarding the recent protest on campus. Here is my response to his statement: Dear Father Jenkins, I am writing to express my sincere concern regarding the University’s decision to allow students to be prosecuted on charges stemming from a peaceful protest."
-              link="#"
+              link="./blog"
             />
           </section>
 
