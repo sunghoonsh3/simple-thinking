@@ -1,3 +1,3 @@
 export default function Politics() {
-  return <p>Politics</p>;
+  return <p>politics section is not ready yet</p>;
 }
