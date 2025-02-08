@@ -32,17 +32,17 @@ export default async function BlogPost({ params }) {
   if (!post) return notFound();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen m-3 sm:m-0 bg-white">
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-4 lg:mt-20">
+      <main className="max-w-2xl mx-auto px-4 mt-10 lg:mt-20">
         <article className="prose prose-lg mx-auto">
           {/* Title */}
-          <h1 className="text-3xl font-serif mb-12">
+          <h1 className="text-lg sm:text-xl lg:text-3xl font-serif mb-6 lg:mb-12">
             {post.metadata?.title || "Untitled"}
           </h1>
 
           {/* Date and Category - Option 2: Inline with date */}
-          <div className="flex items-center mb-12 space-x-4">
+          <div className="flex items-center mb-6 marker:lg:mb-12 space-x-4">
             <time className="text-gray-600">
               {post.metadata?.date || "Unknown Date"}
             </time>
@@ -53,7 +53,7 @@ export default async function BlogPost({ params }) {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg font-serif text-lg mx-auto">
+          <div className="prose prose-lg font-serif text-md lg:text-lg mx-auto">
             <MDXRemote source={post.content} components={components} />
           </div>
         </article>

@@ -24,10 +24,10 @@ export default function Header() {
   };
 
   return (
-    <header className="text-black p-4 pt-10">
-      <div className="container mx-auto flex justify-between items-center font-lateef">
+    <header className="text-black m-3 sm:m-0 p-4 pt-10">
+      <div className="container w-full max-w-full sm:max-w-screen-lg sm:mx-auto flex justify-between items-center font-lateef">
         {/* Logo Section */}
-        <div className="text-2xl font-normal text-nowrap ml-12">
+        <div className="text-2xl font-normal text-nowrap sm:ml-12">
           <Link href="/" onClick={() => handleClick()}>
             simple thinking
           </Link>
@@ -36,7 +36,7 @@ export default function Header() {
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={toggleMenu}
-          className="text-2xl mr-12 md:hidden" // Hide on larger screens
+          className="text-2xl md:hidden" // Hide on larger screens
           aria-label="Toggle Menu"
         >
           {isMenuOpen ? "x" : "💭"} {/* Toggle between emojis */}
