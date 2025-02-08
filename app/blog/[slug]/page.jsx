@@ -1,8 +1,29 @@
-// this page is responsible for rendering each blog's post
-
 import { getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+
+// Custom MDX components for images, videos, links, etc.
+const components = {
+  img: (props) => (
+    <img {...props} className="rounded-lg shadow-md mx-auto max-w-2xl w-full" />
+  ),
+  video: (props) => (
+    <video
+      {...props}
+      className="rounded-lg mx-auto max-w-2xl w-full"
+      controls
+    />
+  ),
+  a: (props) => (
+    <a {...props} className="text-gray-600 hover:underline" target="_blank" />
+  ),
+  p: (props) => (
+    <p
+      {...props}
+      className="text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
+    />
+  ),
+};
 
 export default async function BlogPost({ params }) {
   const { slug } = params;
@@ -11,10 +32,32 @@ export default async function BlogPost({ params }) {
   if (!post) return notFound();
 
   return (
-    <article className="prose">
-      <h1>{post.metadata.title}</h1>
-      <p className="text-gray-500">{post.metadata.date}</p>
-      <MDXRemote source={post.content} />
-    </article>
+    <div className="min-h-screen bg-white">
+      {/* Main Content */}
+      <main className="max-w-2xl mx-auto px-4 lg:mt-20">
+        <article className="prose prose-lg mx-auto">
+          {/* Title */}
+          <h1 className="text-3xl font-serif mb-12">
+            {post.metadata?.title || "Untitled"}
+          </h1>
+
+          {/* Date and Category - Option 2: Inline with date */}
+          <div className="flex items-center mb-12 space-x-4">
+            <time className="text-gray-600">
+              {post.metadata?.date || "Unknown Date"}
+            </time>
+            <span className="text-gray-400">•</span>
+            <span className="text-gray-600 tracking-widest uppercase">
+              {post.metadata?.category || "Uncategorized"}
+            </span>
+          </div>
+
+          {/* Content */}
+          <div className="prose prose-lg font-serif text-lg mx-auto">
+            <MDXRemote source={post.content} components={components} />
+          </div>
+        </article>
+      </main>
+    </div>
   );
 }
