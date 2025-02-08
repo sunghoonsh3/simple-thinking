@@ -11,7 +11,11 @@ import Slogan from "@/app/components/Slogan";
 import ProgressBar from "../components/Progessbar";
 
 export default function Books() {
-  return <p>books section is not ready yet.</p>;
+  return (
+    <div className="flex justify-center items-center w-full h-screen">
+      <p>books section is not ready yet</p>
+    </div>
+  );
 }
 
 // export default function Books() {

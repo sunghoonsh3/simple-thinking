@@ -1,3 +1,7 @@
 export default function Politics() {
-  return <p>politics section is not ready yet</p>;
+  return (
+    <div className="flex justify-center items-center w-full h-screen">
+      <p>politics section is not ready yet</p>
+    </div>
+  );
 }
