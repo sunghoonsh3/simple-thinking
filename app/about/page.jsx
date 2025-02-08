@@ -1,3 +1,3 @@
 export default function About() {
-  return <p>about</p>;
+  return <p>about section is not ready yet</p>;
 }
