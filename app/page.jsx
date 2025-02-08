@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllPosts } from "@/lib/mdx";
 import SectionTitle from "@/app/components/SectionTitle";
 import Popup from "@/app/components/Popup";
 import Footer from "@/app/components/Footer";
@@ -11,6 +12,24 @@ import MiddleTextBlock from "./components/MiddleTextBlock";
 import Slogan from "./components/Slogan";
 
 export default function Home() {
+  // get all posts
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const allPosts = await getAllPosts(); // Fetch posts
+      setPosts(allPosts); // Store posts in state
+    }
+    fetchPosts();
+  }, []);
+
+  if (posts.length === 0) {
+    return <p>Loading...</p>; // ✅ Prevents errors while data is loading
+  }
+
+  // latest post
+  const latestPost = posts[0];
+
   return (
     <div>
       <main className="p-4">
@@ -33,10 +52,10 @@ export default function Home() {
           <section className="h-screen w-full">
             <SectionTitle title="recent blog" />
             <BlogPreview
-              title="my response to fr. jenkins' may 13 statement"
-              date="Friday, December 27, 2024"
-              content="On May 13, Fr. Jenkins, the president of Notre Dame University, issued a statement regarding the recent protest on campus. Here is my response to his statement: Dear Father Jenkins, I am writing to express my sincere concern regarding the University’s decision to allow students to be prosecuted on charges stemming from a peaceful protest."
-              link="./blog"
+              title={latestPost.metadata.title}
+              date={latestPost.metadata.date}
+              content={`${latestPost.content.substring(0, 450)}.....`} // Show a short preview
+              slug={latestPost.slug}
             />
           </section>
 

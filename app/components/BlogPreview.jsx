@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function BlogPreview({
   title = "Default Title",
   date = "Default Date",
   content = "Default Content",
-  link = "#",
+  slug = "#",
 }) {
   return (
     <div className="flex flex-col mx-2 lg:flex-row justify-center lg:gap-20 xl:gap-40 lg:items-center font-lateef mt-[100px]">
@@ -17,12 +19,12 @@ export default function BlogPreview({
       {/* Right section: Blog Body */}
       <div className="lg:mr-10 lg:min-w-[300px] max-w-3xl text-lg lg:text-2xl font-normal">
         <p>{content}</p>
-        <a
-          href={link}
+        <Link
+          href={slug ? `/blog/${slug}` : "#"}
           className="underline decoration-underlineBlue decoration-1 underline-offset-4 mt-4 inline-block"
         >
           continue reading -{">"}
-        </a>
+        </Link>
       </div>
     </div>
   );

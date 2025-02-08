@@ -1,10 +1,12 @@
+// this page is responsible for rendering each blog's post
+
 import { getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 
 export default async function BlogPost({ params }) {
   const { slug } = params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) return notFound();
 
