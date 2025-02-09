@@ -67,8 +67,8 @@ export default function Home() {
           >
             <SectionTitle title="monthly highlights" />
             <ListPreview
-              title="wrapping up 2024"
-              description="what i have been up to in 2025"
+              title="january recap coming soon"
+              description="a new year, a new start"
               date="january"
               className="mt-[100px]"
             />
