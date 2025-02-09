@@ -1,6 +1,8 @@
 import { getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+import { remark } from "remark";
+import strip from "strip-markdown";
 
 // Custom MDX components for images, videos, links, etc.
 const components = {

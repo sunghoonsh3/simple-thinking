@@ -54,7 +54,7 @@ export default function Home() {
             <BlogPreview
               title={latestPost.metadata.title}
               date={latestPost.metadata.date}
-              content={`${latestPost.content.substring(0, 450)}.....`} // Show a short preview
+              content={latestPost.preview} // Show a short preview
               slug={latestPost.slug}
             />
           </section>
