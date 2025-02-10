@@ -52,7 +52,7 @@ export default async function BlogPost({ params }) {
           </h1>
 
           {/* Date and Category - Option 2: Inline with date */}
-          <div className="flex items-center mb-6 marker:lg:mb-12 space-x-4">
+          <div className="flex items-center font-serif text-md lg:text-lg mb-6 marker:lg:mb-12 space-x-4">
             <time className="text-gray-600">
               {post.metadata?.date || "Unknown Date"}
             </time>
