@@ -2,8 +2,9 @@ import clsx from "clsx";
 
 export default function ListPreview({
   title = "default title",
-  description = "default description",
-  date = "default date",
+  description = "",
+  date = "",
+  recommendation = "",
   className = "",
 }) {
   return (
@@ -36,7 +37,7 @@ export default function ListPreview({
         {/* Right Column (date), left-aligned */}
         <div className="grid justify-end">
           <h2 className="grid grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl 2xl:text-3xl justify-start">
-            {date}
+            {date} {recommendation}
           </h2>
         </div>
       </div>
