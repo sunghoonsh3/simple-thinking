@@ -1,3 +1,5 @@
+"user client";
+
 import { getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
@@ -25,7 +27,12 @@ const components = {
       className="text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
+  h3: (props) => <h3 {...props} className="text-lg font-semibold mb-4" />,
+
+  em: (props) => <span {...props} className="text-sm font-light italic mb-4" />,
 };
+
+// className="text-lg lg:text-xl text-gray-700 border-l-4 border-underlineBlue pl-4 my-6"
 
 export default async function BlogPost({ params }) {
   const { slug } = params;
