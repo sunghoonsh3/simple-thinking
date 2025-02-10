@@ -1,10 +1,10 @@
 "use client";
 
+import Footer from "@/app/components/Footer";
 import { useEffect, useState } from "react";
 import { getAllPosts } from "@/lib/mdx";
 import SectionTitle from "@/app/components/SectionTitle";
 import Popup from "@/app/components/Popup";
-import Footer from "@/app/components/Footer";
 import BlogPreview from "./components/BlogPreview";
 import ListPreview from "./components/ListPreview";
 import ListPreview_2 from "./components/ListPreview_2";

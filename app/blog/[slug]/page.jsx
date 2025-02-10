@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { remark } from "remark";
 import strip from "strip-markdown";
+import Footer from "@/app/components/Footer";
 
 // Custom MDX components for images, videos, links, etc.
 const components = {
@@ -66,6 +67,7 @@ export default async function BlogPost({ params }) {
             <MDXRemote source={post.content} components={components} />
           </div>
         </article>
+        <Footer />
       </main>
     </div>
   );
