@@ -24,13 +24,16 @@ export const metadata = {
   title: "Simple Thinking",
   description: "a blog by tristan sharing simple thoughts and reflections",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lateef.variable} ${gowunBatang.variable} `}>
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
       <body>
         <Header />
         {children}
