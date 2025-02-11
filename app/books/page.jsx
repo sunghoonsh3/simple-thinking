@@ -36,6 +36,7 @@ export default function Books() {
             <h1 className="text-[100px] font-lateef">,</h1>
           </section>
           <section className="h-screen w-full">
+            {/* 1) Read in 2024 */}
             <SectionTitle title="read in 2024" />
             <ListPreview
               title="Vegetarian by Han Kang"
@@ -44,9 +45,14 @@ export default function Books() {
               className="mt-[100px]"
             />
             <ListPreview
-              title="Hooked by Nir Eyal"
+              title="The Givers by David Callahan"
               description="book review coming soon"
-              recommendation="highly recommend"
+              recommendation="it's okay"
+            />
+            <ListPreview
+              title="Options Trading Simplified for Beginners"
+              description="book review coming soon"
+              recommendation="it's okay"
             />
             <ListPreview
               title="The Man Who Solved the Market by Gregory Zuckerman"
@@ -54,42 +60,46 @@ export default function Books() {
               recommendation="worth a read"
             />
             <ListPreview
-              title="The Givers by David Callahan"
-              description="book review coming soon"
-              recommendation="it's okay"
-            />
-            <ListPreview
               title="You^2"
               description="book review coming soon"
               recommendation="worth a read"
             />
+            <ListPreview
+              title="The psychology of Money by Morgan Housel"
+              description="book review coming soon"
+              recommendation="worth a read"
+            />
+            <ListPreview
+              title="Hooked by Nir Eyal"
+              description="book review coming soon"
+              recommendation="highly recommend"
+            />
+            <ListPreview
+              title="You Look Like a Thing and I Love You by Janelle Shane"
+              description="book review coming soon"
+              recommendation="highly recommend"
+            />
           </section>
+          {/* 2) Life Changing Books */}
           <section className="h-screen w-full">
             <SectionTitle title="life changing book" />
             <ListPreview
-              title="january recap coming soon"
-              description="a new year, a new start"
-              date="january"
+              title="Silence by Shusaku Endo"
+              description="book review coming soon"
+              recommendation="read this shit"
               className="mt-[100px]"
             />
             <ListPreview
-              title="it's not feburary yet"
-              description="just a placeholder :)"
-              date="feburary"
+              title="The 22 Immutable Laws of Marketing"
+              description="book review coming soon"
+              recommendation="read this shit"
             />
             <ListPreview
-              title="not march as well"
-              description="again, just a placeholder :)"
-              date="march"
-            />
-            <ListPreview
-              title="ifykyk"
-              description="april is my fav month"
-              date="april"
+              title="Think and Grow Rich by Napolleon Hill"
+              description="book review coming soon"
+              recommendation="read this shit"
             />
           </section>
-          {/* 4) Currently progress */}
-          <div className="pb-64"></div>
           {/* Footer */}
           <Footer />
         </div>

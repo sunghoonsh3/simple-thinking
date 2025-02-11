@@ -20,7 +20,11 @@ const components = {
     />
   ),
   a: (props) => (
-    <a {...props} className="text-gray-600 hover:underline" target="_blank" />
+    <a
+      {...props}
+      className="decoration-1 italic text-underlineBlue underline-offset-4 hover:underline decoration-underlineBlue "
+      target="_blank"
+    />
   ),
   p: (props) => (
     <p
