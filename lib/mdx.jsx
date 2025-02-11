@@ -38,16 +38,18 @@ export async function getPostBySlug(slug) {
 export async function getAllPosts() {
   const slugs = await getPostSlugs();
   const posts = await Promise.all(
-    slugs.map(async (slug) => await getPostBySlug(slug))
+    slugs.map(async (slug) => {
+      const post = await getPostBySlug(slug);
+      if (!post) return null;
+
+      return {
+        ...post,
+        preview: post.metadata.preview || (await generatePreview(post.content)), // Use preview if available
+      };
+    })
   );
 
-  return posts
-    .filter((post) => post !== null)
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
-    .map((post) => ({
-      ...post,
-      preview: generatePreview(post.content), // Generate clean preview
-    }));
+  return posts.filter((post) => post !== null);
 }
 
 // Function to clean and shorten the preview text
@@ -58,6 +60,6 @@ async function generatePreview(content) {
     .replace(/\\/g, "")
     .trim()
     .split("\n")
-    .slice(0, 8)
+    .slice(0, 4)
     .join(" ");
 }

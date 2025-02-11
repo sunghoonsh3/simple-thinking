@@ -27,7 +27,10 @@ export default function Home() {
   }
 
   // latest post
-  const latestPost = posts[0];
+  // latest post - Ensuring latest by date
+  const latestPost = posts
+    .slice() // Make a copy of the array to avoid mutating state
+    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))[0]; // Sort and get latest
 
   return (
     <div>
