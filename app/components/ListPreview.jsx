@@ -17,7 +17,7 @@ export default function ListPreview({
       {/* Flexbox for Equal Spacing */}
       <div
         className="
-          flex w-full max-w-[1500px] justify-between items-start
+          flex w-full lg:max-w-[1100px] 2xl:max-w-[1500px] justify-between items-start
           px-4 sm:px-6 lg:px-12
         "
       >
