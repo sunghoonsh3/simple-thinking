@@ -31,7 +31,9 @@ export default function ListPreview({
         {/* Left Column */}
         <div className="text-lg sm:text-2xl 2xl:text-3xl">
           <h2 className="text-wrap xl:text-nowrap"> {title}</h2>
-          <p className="text-descriptionGray text-nowrap mt-2">{description}</p>
+          <p className="text-descriptionGray xl:text-nowrap mt-2">
+            {description}
+          </p>
         </div>
 
         {/* Right Column (date), left-aligned */}
