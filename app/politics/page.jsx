@@ -5,6 +5,7 @@ import { getAllPosts } from "@/lib/mdx";
 import SectionTitle from "@/app/components/SectionTitle";
 import Footer from "@/app/components/Footer";
 import StackBlogPreview from "../components/StackBlogPreview";
+import Image from "next/image";
 
 export default function Politics() {
   const [posts, setPosts] = useState([]);
@@ -48,7 +49,6 @@ export default function Politics() {
               </div>
             </div>
           </section>
-
           {/* Thoughts on Political Events */}
           <section className="w-full pb-20">
             <SectionTitle
@@ -71,7 +71,16 @@ export default function Politics() {
               <p className="text-center">No posts found in this category.</p>
             )}
           </section>
-
+          <section className="w-full flex justify-center items-center min-h-screen">
+            <div className="flex justify-center">
+              <Image
+                src="/dove.jpg"
+                alt="A dove in the sky" // ✅ Always include alt text for accessibility
+                width={100}
+                height={100}
+              />
+            </div>
+          </section>
           {/* Thoughts on Policies */}
           <section className="w-full pb-20">
             <SectionTitle title="thoughts on policies" alignment="left" />
@@ -91,7 +100,6 @@ export default function Politics() {
               <p className="text-center">No posts found in this category.</p>
             )}
           </section>
-
           {/* Footer */}
           <Footer />
         </div>

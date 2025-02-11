@@ -11,7 +11,7 @@ export default function SectionTitle({
         "flex items-center text-xl sm:text-2xl 2xl:text-3xl",
         {
           "justify-start0": alignment === "left",
-          "ml-2 sm:ml-20 xl:ml-32 2xl:ml-20": alignment === "left",
+          "ml-2 sm:ml-20 xl:mx-60 2xl:ml-20": alignment === "left",
           "justify-center": alignment === "center",
           "justify-end": alignment === "right", // Optional
         },
