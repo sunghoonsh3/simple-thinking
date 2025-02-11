@@ -30,13 +30,13 @@ export default function ListPreview({
       >
         {/* Left Column */}
         <div className="text-lg sm:text-2xl 2xl:text-3xl">
-          <h2>{title}</h2>
+          <h2 className="text-wrap xl:text-nowrap"> {title}</h2>
           <p className="text-descriptionGray text-nowrap mt-2">{description}</p>
         </div>
 
         {/* Right Column (date), left-aligned */}
         <div className="grid justify-end">
-          <h2 className="grid grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl 2xl:text-3xl justify-start">
+          <h2 className="grid text-wrap xl:text-nowrap grid-cols-[40px] sm:grid-cols-[70px] text-lg sm:text-2xl 2xl:text-3xl justify-start">
             {date} {recommendation}
           </h2>
         </div>
