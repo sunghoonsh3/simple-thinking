@@ -139,9 +139,8 @@ export default function Home() {
           <section
             className="
               h-screen w-full
-              mt-32
-              xl:mt-40
-              2xl:mt-60
+              mt-60
+              lg:mt-96
             "
           >
             <SectionTitle title="what i've been learning" />

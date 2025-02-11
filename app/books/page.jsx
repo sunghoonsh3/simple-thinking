@@ -74,7 +74,13 @@ export default function Books() {
           </section>
 
           {/* Life-Changing Books Section */}
-          <section className="w-full min-h-screen mt-20">
+          <section
+            className="
+              h-screen w-full
+              mt-60
+              lg:mt-96
+            "
+          >
             <SectionTitle title="life changing books" />
             <div className="mt-20 2xl:mt-28">
               <ListPreview
