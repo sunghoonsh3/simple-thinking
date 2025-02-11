@@ -13,7 +13,7 @@ export default function BlogPreview({
         <h2 className="font-normal text-xl md:text-2xl lg:text-3xl whitespace-nowrap">
           {title}
         </h2>
-        <p className="flex items-center text-descriptionGray text-sm sm:text-lg lg:text-xl">
+        <p className="flex items-center text-descriptionGray text-sm sm:text-lg lg:text-xl xl:text-2xl">
           {date}
         </p>
       </div>
