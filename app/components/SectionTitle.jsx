@@ -1,19 +1,23 @@
 import clsx from "clsx";
 
-// components/SectionTitle.js
 export default function SectionTitle({
   title = "default title",
+  alignment = "center", // Accept "left" or "center"
   className = "",
 }) {
   return (
     <div
       className={clsx(
-        "flex justify-center items-center text-xl sm:text-2xl 2xl:text-3xl",
+        "flex items-center text-xl sm:text-2xl 2xl:text-3xl",
+        {
+          "justify-start0": alignment === "left",
+          "ml-2 sm:ml-20 xl:ml-32 2xl:ml-20": alignment === "left",
+          "justify-center": alignment === "center",
+          "justify-end": alignment === "right", // Optional
+        },
         className
       )}
     >
-      {" "}
-      {/* mt-[850px] */}
       <p className="font-lateef font-normal underline decoration-underlineBlue decoration-1 underline-offset-[6px]">
         {title}
       </p>

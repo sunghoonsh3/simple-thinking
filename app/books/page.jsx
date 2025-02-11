@@ -8,14 +8,6 @@ import BlogPreview from "@/app/components/BlogPreview";
 import ListPreview from "@/app/components/ListPreview";
 import Slogan from "@/app/components/Slogan";
 
-// // pages / index.js;
-// export default function Books() {
-//   return (
-//     <div className="flex justify-center items-center w-full h-screen">
-//       <p>books section is not ready yet</p>
-//     </div>
-//   );
-// }
 export default function Books() {
   return (
     <div>
@@ -94,7 +86,6 @@ export default function Books() {
               />
             </div>
           </section>
-
           {/* Footer */}
           <Footer />
         </div>

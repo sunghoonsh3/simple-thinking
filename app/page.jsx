@@ -33,7 +33,7 @@ export default function Home() {
     <div>
       <main className="p-4">
         {/* Allows the user to see one section at a time */}
-        <div className="">
+        <div>
           <Popup />
           <section
             className="
