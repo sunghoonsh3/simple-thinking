@@ -60,7 +60,6 @@ export default function Home() {
               slug={latestPost.slug}
             />
           </section>
-          <Img></Img>
           {/* 3) Monthly highlights */}
           {/* Removed snap-start here */}
           <section
