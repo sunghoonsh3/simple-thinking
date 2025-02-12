@@ -10,7 +10,7 @@ export default function BlogPreview({
     <div className="flex flex-col mx-2 lg:flex-row justify-center lg:gap-20 xl:gap-40 lg:items-center font-lateef mt-[100px]">
       {/* Left section: Title and Date */}
       <div className="flex flex-col lg:ml-10 xl:ml-16 2xl:ml-20 mb-4 lg:mb-0">
-        <h2 className="font-normal text-xl md:text-2xl lg:text-3xl whitespace-nowrap">
+        <h2 className="font-normal text-xl md:text-2xl lg:text-3xl whitespace-nowrap text-wrap">
           {title}
         </h2>
         <p className="flex items-center text-descriptionGray text-sm sm:text-lg lg:text-xl xl:text-2xl">

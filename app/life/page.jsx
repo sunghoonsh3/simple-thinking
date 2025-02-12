@@ -47,7 +47,7 @@ export default function Life() {
             </div>
           </section>
           {/* Thoughts on Political Events */}
-          <section className="w-full pb-20">
+          <section className="w-full">
             <SectionTitle title="feburary okrs" alignment="left" />
             {feburaryOKRs.length > 0 ? (
               feburaryOKRs.map((post) =>
@@ -69,13 +69,12 @@ export default function Life() {
 
           <section
             className="
-            mt-60
-    w-full 
-h-screen
+mt-40
+sm:mt-60
     overflow-hidden // Prevents overflow issues
   "
           >
-            <SectionTitle title="photos" alignment="left" className="mb-20" />
+            <SectionTitle title="photos" alignment="left" className="mb-10" />
             <div
               className="
       grid
@@ -103,7 +102,7 @@ h-screen
                     alt={`Gallery image ${i + 1}`}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-md object-cover object-top sm:object-center"
                   />
                 </div>
               ))}
@@ -112,7 +111,7 @@ h-screen
 
           {/* me yapping */}
 
-          <section className="w-full h-screen">
+          <section className="w-full mt-40 sm:mt-96">
             <SectionTitle title="me yapping" alignment="left" />
             {meYapping.length > 0 ? (
               meYapping.map((post) =>
@@ -133,7 +132,7 @@ h-screen
 
           <section
             className="
- w-full h-screen
+ w-full mt-40 sm:mt-96
             "
           >
             <SectionTitle

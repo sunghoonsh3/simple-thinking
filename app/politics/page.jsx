@@ -82,7 +82,7 @@ export default function Politics() {
             </div>
           </section>
           {/* Thoughts on Policies */}
-          <section className="w-full h-screen pb-20">
+          <section className="w-full pb-20">
             <SectionTitle title="thoughts on policies" alignment="left" />
             {policyPosts.length > 0 ? (
               policyPosts.map((post) =>
