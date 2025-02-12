@@ -52,7 +52,7 @@ export default function Startup() {
             <h1 className="text-2xl font-lateef">building @ atti</h1>
           </section>
           {/* Read in 2024 Section */}
-          <section className="w-full pb-20">
+          <section className="w-full h-screen">
             <SectionTitle title="real-life lessons" alignment="left" />
             {startupPosts.length > 0 ? (
               startupPosts.map((post) =>

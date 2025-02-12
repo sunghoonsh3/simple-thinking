@@ -9,7 +9,7 @@ export default function StackBlogPreview({
   return (
     <div className="flex flex-col lg:flex-row justify-start lg:items-start font-lateef mt-10">
       {/* Left section: Title and Date */}
-      <div className="flex flex-col mx-2 sm:mx-20 xl:mx-60 2xl:mx-20 mb-4 lg:mb-0">
+      <div className="flex flex-col mx-2 sm:mx-20 xl:mx-60 2xl:ml-[780px] mb-4 lg:mb-0">
         <h2 className="font-normal text-xl md:text-2xl lg:text-2xl whitespace-nowrap text-wrap mb-2">
           {title}
         </h2>

@@ -36,7 +36,7 @@ export default function Life() {
       <main className="p-4">
         <div>
           {/* Empty Section for Spacing */}
-          <section className="h-[calc(100vh-110px)] flex items-center justify-center">
+          <section className="h-[calc(100vh-110px)] w-fullflex items-center justify-center">
             <div className="flex items-center justify-center min-h-screen">
               <Image
                 src="/life.jpg"
@@ -66,9 +66,26 @@ export default function Life() {
             )}
           </section>
           {/* Image Gallery Section */}
-          <SectionTitle title="feburary okrs" alignment="left" />
-          <section className="flex flex-col items-center w-full my-10 sm:my-20">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 w-full max-w-6xl">
+
+          <section
+            className="
+            mt-60
+    w-full 
+h-screen
+    overflow-hidden // Prevents overflow issues
+  "
+          >
+            <SectionTitle title="photos" alignment="left" className="mb-20" />
+            <div
+              className="
+      grid
+      gap-4
+      grid-cols-[repeat(auto-fit,minmax(200px,1fr))]
+      sm:mx-20
+      xl:mx-60
+      2xl:mx-[780px]
+    "
+            >
               {[
                 "/life-images/photo-1.jpg",
                 "/life-images/photo-2.jpg",
@@ -76,14 +93,14 @@ export default function Life() {
                 "/life-images/photo-4.jpg",
                 "/life-images/photo-5.jpg",
                 "/life-images/photo-6.jpg",
-              ].map((src, index) => (
+              ].map((src, i) => (
                 <div
-                  key={index}
+                  key={i}
                   className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]"
                 >
                   <Image
                     src={src}
-                    alt={`Gallery image ${index + 1}`}
+                    alt={`Gallery image ${i + 1}`}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg shadow-md"
@@ -92,13 +109,10 @@ export default function Life() {
               ))}
             </div>
           </section>
-          <section
-            className="
-              h-screen w-full
-              mt-60
-              lg:mt-96
-            "
-          >
+
+          {/* me yapping */}
+
+          <section className="w-full h-screen">
             <SectionTitle title="me yapping" alignment="left" />
             {meYapping.length > 0 ? (
               meYapping.map((post) =>
@@ -116,17 +130,17 @@ export default function Life() {
               <p className="text-center">No posts found in this category.</p>
             )}
           </section>
+
           <section
             className="
-              h-screen w-full
-              mt-40
+ w-full h-screen
             "
           >
             <SectionTitle
               title="what i lov to read every morning"
               alignment="left"
             />
-            <div className="flex font-lateef flex-col mx-2 sm:mx-20 xl:mx-60 2xl:mx-20 py-2">
+            <div className="flex font-lateef flex-col mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] py-2">
               <p className="flex text-descriptionGray text-md sm:text-lg lg:text-lg xl:text-xl mb-4">
                 a few sites i keep coming back to every morning. maybe it’s the
                 content, the style, or just the vibe of the site. no ranking, no
