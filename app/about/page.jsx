@@ -7,7 +7,7 @@ import SubscribeModal from "../components/SubscribeModal";
 export default function About() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="font-lateef text-lg lg:text-xl 2xl:text-2xl px-5">
+    <main className="font-lateef text-lg lg:text-2xl 2xl:text-3xl px-5">
       <section
         className="
       h-screen w-full flex justify-center text-center items-center"
