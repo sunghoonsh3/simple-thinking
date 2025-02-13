@@ -1,0 +1,7 @@
+model Subscription {
+  id               String  @id @default(uuid())
+  email            String  @unique
+  verified         Boolean @default(false)
+  verificationToken String?
+  createdAt        DateTime @default(now())
+}
