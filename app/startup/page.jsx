@@ -49,7 +49,9 @@ export default function Startup() {
         <div>
           {/* Empty Section for Spacing */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
-            <h1 className="text-2xl font-lateef">building @ atti</h1>
+            <h1 className="text-2xl 2xl:text-3xl font-lateef">
+              building @ atti
+            </h1>
           </section>
           {/* Read in 2024 Section */}
           <section className="w-full h-screen">
