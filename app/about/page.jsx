@@ -7,34 +7,34 @@ import SubscribeModal from "../components/SubscribeModal";
 export default function About() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="font-lateef 2xl:text-2xl ">
+    <main className="font-lateef 2xl:text-2xl px-5">
       <section
         className="
-      h-screen w-full flex justify-center items-center"
+      h-screen w-full flex justify-center text-center items-center"
       >
         <p className="">hi there, i am tristan :)</p>
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p className="">oh wanna keep reading?</p>
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p className="">just a little bit bout me then:</p>
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p className="">i lov developing innovative products</p>
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p className="">
           i also lov writing about politics, startups, books, life, and coding.
@@ -42,9 +42,9 @@ export default function About() {
       </section>
       <section
         className="
-    h-screen w-full flex flex-col justify-center items-center"
+    h-screen w-full flex flex-col justify-center text-center items-center"
       >
-        <p>
+        <p className="pb-2 sm:pb-0">
           innovating cool products and yapping about philosophical questions?
           that’s my jam.
         </p>
@@ -55,28 +55,30 @@ export default function About() {
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p>you are still here?</p>
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p>impressive! a little bit more then!</p>
       </section>
       <section
         className="
-    h-screen w-full flex flex-col justify-center items-center"
+    h-screen w-full flex flex-col justify-center text-center items-center"
       >
-        <p>i am a junior college student at the university of notre dame.</p>
+        <p className="pb-2 sm:pb-0">
+          i am a junior college student at the university of notre dame.
+        </p>
         <p>i major in computer science and political science.</p>
       </section>
       <section
         className="
-    h-screen w-full flex flex-col justify-center items-center"
+    h-screen w-full flex flex-col justify-center text-center items-center"
       >
-        <p>
+        <p className="pb-2 sm:pb-0">
           i also run a venture-backed startup, atti, a platform that connects
           internationals in the us!
         </p>
@@ -92,7 +94,7 @@ export default function About() {
       </section>
       <section
         className="
-    h-screen w-full flex justify-center items-center"
+    h-screen w-full flex justify-center text-center items-center"
       >
         <p>
           if u like what i do and wanna buy me&nbsp;
