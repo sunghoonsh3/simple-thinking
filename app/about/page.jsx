@@ -48,6 +48,11 @@ export default function About() {
           innovating cool products and yapping about philosophical questions?
           that’s my jam.
         </p>
+      </section>
+      <section
+        className="
+    h-screen w-full flex flex-col justify-center text-center items-center"
+      >
         <p>
           think of me as the small totoro—bouncy, full of life, and always
           curious.
@@ -72,6 +77,11 @@ export default function About() {
         <p className="pb-2 sm:pb-0">
           i am a junior college student at the university of notre dame.
         </p>
+      </section>
+      <section
+        className="
+    h-screen w-full flex flex-col justify-center text-center items-center"
+      >
         <p>i major in computer science and political science.</p>
       </section>
       <section
@@ -82,6 +92,11 @@ export default function About() {
           i also run a venture-backed startup, atti, a platform that connects
           internationals in the us!
         </p>
+      </section>
+      <section
+        className="
+    h-screen w-full flex flex-col justify-center text-center items-center"
+      >
         <p>
           and ... if u like what i do and wanna chat, book&nbsp;
           <a
@@ -107,7 +122,7 @@ export default function About() {
           , i won’t say no hehe.
         </p>
       </section>
-      <SubscribeModal isOpen={isOpen} onClose={() => setIsOpen(false)} />;
+      <SubscribeModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
       <Footer />
     </main>
   );
