@@ -30,7 +30,7 @@ export default function About() {
         className="
     h-screen w-full flex justify-center text-center items-center"
       >
-        <p className="">i lov developing innovative products</p>
+        <p className="">i lov developing innovative products.</p>
       </section>
       <section
         className="
