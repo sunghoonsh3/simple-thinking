@@ -13,11 +13,9 @@ const components = {
     <img {...props} className="rounded-lg shadow-md mx-auto max-w-2xl w-full" />
   ),
   video: (props) => (
-    <video
-      {...props}
-      className="rounded-lg mx-auto max-w-2xl w-full"
-      controls
-    />
+    <div className="flex justify-center items-center w-full">
+      <video {...props} className="rounded-lg w-full mb-4" controls />
+    </div>
   ),
   a: (props) => (
     <a
@@ -35,6 +33,18 @@ const components = {
   h3: (props) => <h3 {...props} className="text-lg font-semibold mb-4" />,
 
   em: (props) => <span {...props} className="text-sm font-light italic mb-4" />,
+
+  iframe: (props) => (
+    <div className="relative pb-[56.25%] h-0 max-w-2xl mx-auto rounded-lg overflow-hidden">
+      <iframe
+        {...props}
+        className="absolute top-0 left-0 w-full h-full"
+        frameBorder="0"
+        allowFullScreen
+        loading="lazy"
+      />
+    </div>
+  ),
 };
 
 // className="text-lg lg:text-xl text-gray-700 border-l-4 border-underlineBlue pl-4 my-6"

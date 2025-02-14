@@ -22,7 +22,7 @@ export default function StackBlogPreviewKr({
           <p>{content}</p>
           <Link
             href={slug ? `/blog/${slug}` : "#"}
-            className="underline decoration-underlineBlue decoration-1 underline-offset-4 mt-4 font-lateef inline-block"
+            className="underline decoration-underlineBlue decoration-1 text-lg lg:text-xl 2xl:text-2xl underline-offset-4 mt-4 font-lateef inline-block"
           >
             continue reading -{">"}
           </Link>

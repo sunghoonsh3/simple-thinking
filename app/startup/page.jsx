@@ -16,6 +16,7 @@ import BlogPreview from "@/app/components/BlogPreview";
 import ListPreview from "@/app/components/ListPreview";
 import { getAllPosts } from "@/lib/mdx";
 import StackBlogPreviewKr from "../components/StackBlogPreviewKr";
+import StackBlogPreview from "../components/StackBlogPreview";
 
 // // pages / index.js;
 // export default function Books() {
@@ -38,11 +39,15 @@ export default function Startup() {
   }, []);
 
   // Filter posts into different subcategories
-  const startupPosts = posts
+  const realLifePosts = posts
     .filter((post) => post.metadata.subcategory === "real-life lessons")
     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
     .slice(0, 4); // Limit to 3-4 posts
 
+  const coolStuffPosts = posts
+    .filter((post) => post.metadata.subcategory === "cool stuff")
+    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
+    .slice(0, 4); // Limit to 3-4 posts
   return (
     <div>
       <main className="p-4">
@@ -53,11 +58,30 @@ export default function Startup() {
               building @ atti
             </h1>
           </section>
-          {/* Read in 2024 Section */}
+          {/* Cool Stuff */}
+          <section className="w-full h-screen">
+            <SectionTitle title="cool stuff" alignment="left" />
+            {coolStuffPosts.length > 0 ? (
+              coolStuffPosts.map((post) =>
+                post && post.metadata ? (
+                  <StackBlogPreview
+                    key={post.slug}
+                    title={post.metadata.title}
+                    date={post.metadata.date}
+                    content={post.preview}
+                    slug={post.slug} // Shortened preview from getAllPosts()
+                  />
+                ) : null
+              )
+            ) : (
+              <p className="text-center">No posts found in this category.</p>
+            )}
+          </section>
+          {/* Real life lessons */}
           <section className="w-full h-screen">
             <SectionTitle title="real-life lessons" alignment="left" />
-            {startupPosts.length > 0 ? (
-              startupPosts.map((post) =>
+            {realLifePosts.length > 0 ? (
+              realLifePosts.map((post) =>
                 post && post.metadata ? (
                   <StackBlogPreviewKr
                     key={post.slug}
