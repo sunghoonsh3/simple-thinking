@@ -97,7 +97,7 @@ export default function Politics() {
                 ) : null
               )
             ) : (
-              <p className="text-center">No posts found in this category.</p>
+              <p className="text-center">Loading the content now...</p>
             )}
           </section>
           {/* Footer */}
