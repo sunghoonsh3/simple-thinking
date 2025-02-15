@@ -152,6 +152,9 @@ sm:mt-60
               <p className="text-lg pb-4">https://www.wsj.com/</p>
               <p className="text-lg pb-4">https://www.paulgraham.com/</p>
               <p className="text-lg pb-4">
+                https://www.theintrinsicperspective.com/
+              </p>
+              <p className="text-lg pb-4">
                 https://www.linkedin.com/newsletters/peter-shin-s-startup-thoughts-6943078270028382208/
               </p>
             </div>
