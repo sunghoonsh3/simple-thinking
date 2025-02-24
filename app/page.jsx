@@ -102,6 +102,10 @@ export default function Home() {
               description="the military dictatorship and the Gwangju Uprising"
             />
             <MiddleTextBlock
+              title="Principals of Plant Breeding and Genetics by George Acquaah"
+              description="fundamentals of plant breeding (reading for startup)"
+            />
+            <MiddleTextBlock
               title="Engineering in Plain Sight by Grady Hillhouse"
               description="overlooked infrastructure and everyday engineering"
             />
