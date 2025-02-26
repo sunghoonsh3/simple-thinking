@@ -32,6 +32,10 @@ export default function Popup() {
           the website’s migrating from myexpositions.com, so it’s still a bit
           messy. sorry 'bout that! 🙃
         </p>
+        <p className="mb-4 text-xl">
+          {" "}
+          it's also not optimized, so it's kinda slow.. mb!
+        </p>
         <div className="flex gap-4 justify-center">
           <button
             onClick={handleClosePopup}
