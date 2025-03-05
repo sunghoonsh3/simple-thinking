@@ -1,40 +1,69 @@
-"use client";
-
-import { useEffect, useState } from "react";
+// politics/page.jsx
+import { Suspense } from "react";
 import { getAllPosts } from "@/lib/mdx";
 import SectionTitle from "@/app/components/SectionTitle";
 import Footer from "@/app/components/Footer";
 import StackBlogPreview from "../components/StackBlogPreview";
 import Image from "next/image";
 
-export default function Politics() {
-  const [posts, setPosts] = useState([]);
+// Static metadata for the page
+export const metadata = {
+  title: "Politics Blog",
+  description: "Thoughts on political events and policies",
+};
 
-  useEffect(() => {
-    async function fetchPosts() {
-      const allPosts = await getAllPosts(); // Fetch all posts
-      console.log("Fetched posts:", allPosts); // Debugging
-      setPosts([...allPosts]); // Ensuring state update reflects new array
-    }
-    fetchPosts();
-  }, []);
+// Server component that pre-fetches and filters posts
+async function PostsSection({ subcategory, title }) {
+  const allPosts = await getAllPosts();
 
-  // Filter posts into different subcategories
-  const politicalEventsPosts = posts
-    .filter((post) => post.metadata.subcategory === "political events")
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
-    .slice(0, 4); // Limit to 3-4 posts
-
-  const policyPosts = posts
-    .filter((post) => post.metadata.subcategory === "policy") // Correctly filter for policy posts
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
+  const filteredPosts = allPosts
+    .filter((post) => post.metadata?.subcategory === subcategory)
+    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
     .slice(0, 4);
 
+  return (
+    <section className="w-full pb-20">
+      <SectionTitle title={title} alignment="left" />
+      {filteredPosts.length > 0 ? (
+        filteredPosts.map((post) => (
+          <StackBlogPreview
+            key={post.slug}
+            title={post.metadata.title}
+            date={post.metadata.date}
+            content={post.preview}
+            slug={post.slug}
+          />
+        ))
+      ) : (
+        <p className="text-center">No posts found in this category.</p>
+      )}
+    </section>
+  );
+}
+
+// Loading fallback component
+function PostsSectionSkeleton() {
+  return (
+    <section className="w-full pb-20">
+      <div className="h-8 w-64 bg-gray-200 animate-pulse mb-6"></div>
+      {[1, 2, 3, 4].map((i) => (
+        <div key={i} className="mb-8">
+          <div className="h-6 w-3/4 bg-gray-200 animate-pulse mb-2"></div>
+          <div className="h-4 w-1/4 bg-gray-200 animate-pulse mb-4"></div>
+          <div className="h-16 w-full bg-gray-200 animate-pulse"></div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+// Main page component (Server Component)
+export default async function Politics() {
   return (
     <div>
       <main className="p-4">
         <div>
-          {/* Empty Section for Spacing */}
+          {/* Hero Section */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
             <div className="flex items-center justify-center min-h-screen">
               <div className="relative font-lateef text-2xl lg:text-3xl text-nowrap">
@@ -49,57 +78,35 @@ export default function Politics() {
               </div>
             </div>
           </section>
-          {/* Thoughts on Political Events */}
-          <section className="w-full pb-20">
-            <SectionTitle
+
+          {/* Political Events Posts with Suspense */}
+          <Suspense fallback={<PostsSectionSkeleton />}>
+            <PostsSection
+              subcategory="political events"
               title="thoughts on political events"
-              alignment="left"
             />
-            {politicalEventsPosts.length > 0 ? (
-              politicalEventsPosts.map((post) =>
-                post && post.metadata ? (
-                  <StackBlogPreview
-                    key={post.slug}
-                    title={post.metadata.title}
-                    date={post.metadata.date}
-                    content={post.preview}
-                    slug={post.slug} // Shortened preview from getAllPosts()
-                  />
-                ) : null
-              )
-            ) : (
-              <p className="text-center">No posts found in this category.</p>
-            )}
-          </section>
+          </Suspense>
+
+          {/* Dove Image Section */}
           <section className="w-full flex justify-center items-center min-h-screen">
             <div className="flex justify-center">
               <Image
                 src="/dove.jpg"
-                alt="A dove in the sky" // ✅ Always include alt text for accessibility
+                alt="A dove in the sky"
                 width={100}
                 height={100}
+                priority={false}
+                loading="lazy"
+                quality={80}
               />
             </div>
           </section>
-          {/* Thoughts on Policies */}
-          <section className="w-full pb-20">
-            <SectionTitle title="thoughts on policies" alignment="left" />
-            {policyPosts.length > 0 ? (
-              policyPosts.map((post) =>
-                post && post.metadata ? (
-                  <StackBlogPreview
-                    key={post.slug}
-                    title={post.metadata.title}
-                    date={post.metadata.date}
-                    content={post.preview}
-                    slug={post.slug} // Shortened preview from getAllPosts()
-                  />
-                ) : null
-              )
-            ) : (
-              <p className="text-center">Loading the content now...</p>
-            )}
-          </section>
+
+          {/* Policy Posts with Suspense */}
+          <Suspense fallback={<PostsSectionSkeleton />}>
+            <PostsSection subcategory="policy" title="thoughts on policies" />
+          </Suspense>
+
           {/* Footer */}
           <Footer />
         </div>

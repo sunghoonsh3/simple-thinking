@@ -1,120 +1,108 @@
-"use client";
-
-// export default function Startup() {
-//   return (
-//     <div className="flex justify-center items-center w-full h-screen">
-//       <p>startup section is not ready yet</p>
-//     </div>
-//   );
-// }
-
-import { useEffect, useState } from "react";
+// startup/page.jsx
+import { Suspense } from "react";
 import SectionTitle from "@/app/components/SectionTitle";
-import Popup from "@/app/components/Popup";
 import Footer from "@/app/components/Footer";
-import BlogPreview from "@/app/components/BlogPreview";
-import ListPreview from "@/app/components/ListPreview";
 import { getAllPosts } from "@/lib/mdx";
-import StackBlogPreviewKr from "../components/StackBlogPreviewKr";
 import StackBlogPreview from "../components/StackBlogPreview";
+import StackBlogPreviewKr from "../components/StackBlogPreviewKr";
 
-// // pages / index.js;
-// export default function Books() {
-//   return (
-//     <div className="flex justify-center items-center w-full h-screen">
-//       <p>books section is not ready yet</p>
-//     </div>
-//   );
-// }
+// Static metadata for the page
+export const metadata = {
+  title: "Startup Blog",
+  description: "Cool stuff and real-life lessons about building @ atti",
+};
+
+// Server component that pre-fetches and filters cool stuff posts
+async function CoolStuffSection() {
+  const allPosts = await getAllPosts();
+
+  const coolStuffPosts = allPosts
+    .filter((post) => post.metadata?.subcategory === "cool stuff")
+    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
+    .slice(0, 4);
+
+  return (
+    <section className="w-full h-screen">
+      <SectionTitle title="cool stuff" alignment="left" />
+      {coolStuffPosts.length > 0 ? (
+        coolStuffPosts.map((post) => (
+          <StackBlogPreview
+            key={post.slug}
+            title={post.metadata.title}
+            date={post.metadata.date}
+            content={post.preview}
+            slug={post.slug}
+          />
+        ))
+      ) : (
+        <p className="text-center">Loading the content now...</p>
+      )}
+    </section>
+  );
+}
+
+// Server component that pre-fetches and filters real-life lessons posts
+async function RealLifeLessonsSection() {
+  const allPosts = await getAllPosts();
+
+  const realLifePosts = allPosts
+    .filter((post) => post.metadata?.subcategory === "real-life lessons")
+    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
+    .slice(0, 4);
+
+  return (
+    <section className="w-full h-screen">
+      <SectionTitle title="real-life lessons" alignment="left" />
+      {realLifePosts.length > 0 ? (
+        realLifePosts.map((post) => (
+          <StackBlogPreviewKr
+            key={post.slug}
+            title={post.metadata.title}
+            date={post.metadata.date}
+            content={post.preview}
+            slug={post.slug}
+          />
+        ))
+      ) : (
+        <p className="text-center">Loading the content now...</p>
+      )}
+    </section>
+  );
+}
+
+// Loading fallback component with original styling
+function SectionSkeleton({ title }) {
+  return (
+    <section className="w-full h-screen">
+      <SectionTitle title={title || "loading"} alignment="left" />
+      <p className="text-center">Loading the content now...</p>
+    </section>
+  );
+}
+
+// Main page component (Server Component)
 export default function Startup() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    async function fetchPosts() {
-      const allPosts = await getAllPosts(); // Fetch all posts
-      console.log("Fetched posts:", allPosts); // Debugging
-      setPosts([...allPosts]); // Ensuring state update reflects new array
-    }
-    fetchPosts();
-  }, []);
-
-  // Filter posts into different subcategories
-  const realLifePosts = posts
-    .filter((post) => post.metadata.subcategory === "real-life lessons")
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
-    .slice(0, 4); // Limit to 3-4 posts
-
-  const coolStuffPosts = posts
-    .filter((post) => post.metadata.subcategory === "cool stuff")
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date)) // Sort by date
-    .slice(0, 4); // Limit to 3-4 posts
   return (
     <div>
       <main className="p-4">
         <div>
-          {/* Empty Section for Spacing */}
+          {/* Hero Section - keeping original */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
             <h1 className="text-2xl 2xl:text-3xl font-lateef">
               building @ atti
             </h1>
           </section>
-          {/* Cool Stuff */}
-          <section className="w-full h-screen">
-            <SectionTitle title="cool stuff" alignment="left" />
-            {coolStuffPosts.length > 0 ? (
-              coolStuffPosts.map((post) =>
-                post && post.metadata ? (
-                  <StackBlogPreview
-                    key={post.slug}
-                    title={post.metadata.title}
-                    date={post.metadata.date}
-                    content={post.preview}
-                    slug={post.slug} // Shortened preview from getAllPosts()
-                  />
-                ) : null
-              )
-            ) : (
-              <p className="text-center">Loading the content now...</p>
-            )}
-          </section>
-          {/* Real life lessons */}
-          <section className="w-full h-screen">
-            <SectionTitle title="real-life lessons" alignment="left" />
-            {realLifePosts.length > 0 ? (
-              realLifePosts.map((post) =>
-                post && post.metadata ? (
-                  <StackBlogPreviewKr
-                    key={post.slug}
-                    title={post.metadata.title}
-                    date={post.metadata.date}
-                    content={post.preview}
-                    slug={post.slug} // Shortened preview from getAllPosts()
-                  />
-                ) : null
-              )
-            ) : (
-              <p className="text-center">Loading the content now...</p>
-            )}
-          </section>
 
-          {/* <section className="w-full pb-20">
-            <SectionTitle title="real-life lessons" alignment="left" />
-            {startupPosts.length > 0 ? (
-              startupPosts.map((post) =>
-                post && post.metadata ? (
-                  <StackBlogPreview
-                    key={post.slug}
-                    title={post.metadata.title}
-                    date={post.metadata.date}
-                    content={post.preview}
-                    slug={post.slug} // Shortened preview from getAllPosts()
-                  />
-                ) : null
-              )
-            ) : (
-              <p className="text-center">No posts found in this category.</p>
-            )}
-          </section> */}
+          {/* Cool Stuff Posts with Suspense */}
+          <Suspense fallback={<SectionSkeleton title="cool stuff" />}>
+            <CoolStuffSection />
+          </Suspense>
+
+          {/* Real-life Lessons Posts with Suspense */}
+          <Suspense fallback={<SectionSkeleton title="real-life lessons" />}>
+            <RealLifeLessonsSection />
+          </Suspense>
+
           {/* Footer */}
           <Footer />
         </div>
