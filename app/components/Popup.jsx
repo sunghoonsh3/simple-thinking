@@ -34,7 +34,7 @@ export default function Popup() {
         </p>
         <p className="mb-4 text-xl">
           {" "}
-          it's also not optimized, so it's kinda slow.. mb!
+          it's also doesn't support dark mode. srry!
         </p>
         <div className="flex gap-4 justify-center">
           <button
