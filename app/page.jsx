@@ -1,7 +1,5 @@
-"use client";
-
 import Footer from "@/app/components/Footer";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { getAllPosts } from "@/lib/mdx";
 import SectionTitle from "@/app/components/SectionTitle";
 import Popup from "@/app/components/Popup";
@@ -10,21 +8,9 @@ import ListPreview from "./components/ListPreview";
 import MiddleTextBlock from "./components/MiddleTextBlock";
 import Slogan from "./components/Slogan";
 
-export default function Home() {
+export default async function Home() {
   // get all posts
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    async function fetchPosts() {
-      const allPosts = await getAllPosts(); // Fetch posts
-      setPosts(allPosts); // Store posts in state
-    }
-    fetchPosts();
-  }, []);
-
-  if (posts.length === 0) {
-    return <p>Loading...</p>; // ✅ Prevents errors while data is loading
-  }
+  const posts = await getAllPosts();
 
   // latest post
   // latest post - Ensuring latest by date
