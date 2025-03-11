@@ -27,13 +27,13 @@ export async function generateMetadata(props) {
 // Custom MDX components
 const MdxComponents = {
   img: (props) => (
-    <div className="flex justify-center my-6">
+    <span className="flex justify-center my-6">
       <img
         {...props}
         className="rounded-lg shadow-md max-w-full h-auto"
         loading="lazy"
       />
-    </div>
+    </span>
   ),
   video: (props) => (
     <div className="flex justify-center items-center w-full my-6">

@@ -30,11 +30,11 @@ export default function Popup() {
         <h2 className="mb-4 text-2xl">hey there, thx for visiting my blog!</h2>
         <p className="mb-4 text-xl">
           the website’s migrating from myexpositions.com, so it’s still a bit
-          messy. sorry 'bout that! 🙃
+          messy.
         </p>
         <p className="mb-4 text-xl">
           {" "}
-          it's also doesn't support dark mode. srry!
+          it also doesn't support dark mode yet. sorry 'bout that! 🙃
         </p>
         <div className="flex gap-4 justify-center">
           <button
