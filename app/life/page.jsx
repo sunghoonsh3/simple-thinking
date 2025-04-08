@@ -5,6 +5,7 @@ import SectionTitle from "@/app/components/SectionTitle";
 import Footer from "@/app/components/Footer";
 import StackBlogPreview from "../components/StackBlogPreview";
 import Image from "next/image";
+import Link from "next/link";
 
 // Static metadata for the page
 export const metadata = {
@@ -12,30 +13,71 @@ export const metadata = {
   description: "Personal life, OKRs, photos, and thoughts",
 };
 
-// Server component that pre-fetches and filters February OKRs posts
-async function FebruaryOKRsSection() {
+// Option 3: At the bottom of the section after all entries
+async function CurrentOKRsSection() {
   const allPosts = await getAllPosts();
 
-  const februaryOKRs = allPosts
-    .filter((post) => post.metadata?.subcategory === "feburary okrs")
+  // Filter for current month (April) OKRs using slug pattern
+  const currentOKRs = allPosts
+    .filter(
+      (post) =>
+        post.metadata?.category === "okrs" && post.slug.startsWith("apr-okr-")
+    )
     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
     .slice(0, 4);
 
+  // Get count of past OKRs for the archive link (all non-April OKRs)
+  const pastOKRsCount = allPosts.filter(
+    (post) =>
+      post.metadata?.category === "okrs" && !post.slug.startsWith("apr-okr-")
+  ).length;
+
   return (
     <section className="w-full">
-      <SectionTitle title="feburary okrs" alignment="left" />
-      {februaryOKRs.length > 0 ? (
-        februaryOKRs.map((post) => (
-          <StackBlogPreview
-            key={post.slug}
-            title={post.metadata.title}
-            date={post.metadata.date}
-            content={post.preview}
-            slug={post.slug}
-          />
-        ))
+      {/* Title only */}
+      <SectionTitle title="april okrs" alignment="left" />
+
+      {/* Display current OKRs */}
+      {currentOKRs.length > 0 ? (
+        <>
+          {currentOKRs.map((post) => (
+            <StackBlogPreview
+              key={post.slug}
+              title={post.metadata.title}
+              date={post.metadata.date}
+              content={post.preview}
+              slug={post.slug}
+            />
+          ))}
+
+          {/* Archive link at the bottom */}
+          {pastOKRsCount > 0 && (
+            <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mt-10 mb-4 text-left">
+              <Link
+                href="/life/okrs-archive"
+                className="font-lateef text-blue-500 hover:text-blue-700 transition-colors text-lg inline-flex items-center"
+              >
+                view all past okrs ({pastOKRsCount})
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          )}
+        </>
       ) : (
-        <p className="text-center">No posts found in this category.</p>
+        <p className="text-center">No current OKRs found.</p>
       )}
     </section>
   );
@@ -197,9 +239,9 @@ export default function Life() {
             </div>
           </section>
 
-          {/* February OKRs with Suspense */}
-          <Suspense fallback={<SectionSkeleton title="feburary okrs" />}>
-            <FebruaryOKRsSection />
+          {/* Current (April) OKRs with Suspense */}
+          <Suspense fallback={<SectionSkeleton title="april okrs" />}>
+            <CurrentOKRsSection />
           </Suspense>
 
           {/* Mobile-Optimized Photo Gallery Section */}
