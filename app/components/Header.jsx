@@ -47,7 +47,14 @@ export default function Header() {
           {" "}
           {/* Hide on mobile, show on larger screens */}
           <ul className="flex space-x-6 text-2xl font-lateef mr-12 font-normal">
-            {["books", "politics", "startup", "life", "about"].map((item) => (
+            {[
+              "books",
+              "politics",
+              "startup",
+              "rejections",
+              "life",
+              "about",
+            ].map((item) => (
               <li key={item} className="relative">
                 <Link
                   href={`/${item}`}
@@ -70,7 +77,14 @@ export default function Header() {
         {isMenuOpen && (
           <div className="absolute top-24 right-0 bg-white w-full z-50 shadow-lg md:hidden">
             <ul className="flex flex-col space-y-4 text-2xl font-lateef p-4">
-              {["books", "politics", "startup", "life", "about"].map((item) => (
+              {[
+                "books",
+                "politics",
+                "startup",
+                "rejections",
+                "life",
+                "about",
+              ].map((item) => (
                 <li key={item} className="relative">
                   <Link
                     href={`/${item}`}
