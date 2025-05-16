@@ -9,7 +9,16 @@ export default function RejectionWithAutoReply({
   const [showEmail, setShowEmail] = useState(false);
   const [showReply, setShowReply] = useState(false);
   const [emailJustClosed, setEmailJustClosed] = useState(false);
+  const [textWidth, setTextWidth] = useState(0);
   const replyRef = useRef(null);
+  const textRef = useRef(null);
+
+  // Measure text width on component mount
+  useEffect(() => {
+    if (textRef.current) {
+      setTextWidth(textRef.current.offsetWidth);
+    }
+  }, []);
 
   // Show reply when email is closed (after being opened)
   useEffect(() => {
@@ -69,16 +78,16 @@ export default function RejectionWithAutoReply({
       },
 
       Telora: {
-        subject: "re: choose your co-founder like you’re getting married",
+        subject: "re: choose your co-founder like you're getting married",
         body: [
           "The process starts with an application, followed by a 15-minute call with Eliam if you're shortlisted.",
           "Before applying, try to get an intro through a current fellow. It helps.",
           "In my first call with Eliam (before I had co-founders), he focused entirely on finding a strong partner (go to hackathons, work together first, and test for fit).",
           "It felt nearly impossible to move forward without a co-founder.",
           "Later, I had a second call and met Angie at a dinner event in Miami, this time with co-founders I had recently teamed up with.",
-          "Even then, they were hesitant to invest. As Angie put it, 90% of their early portfolio failures came from co-founder issues. She compared it to marriage. You’re raising a startup together, so choose carefully.",
-          "Eliam also asked about the most technical thing we’d built and how technical we really were.",
-          "Make sure you’re ready to answer that, and having strong technical depth in your team is a big plus.",
+          "Even then, they were hesitant to invest. As Angie put it, 90% of their early portfolio failures came from co-founder issues. She compared it to marriage. You're raising a startup together, so choose carefully.",
+          "Eliam also asked about the most technical thing we'd built and how technical we really were.",
+          "Make sure you're ready to answer that, and having strong technical depth in your team is a big plus.",
         ],
       },
       "Solo Founders": {
@@ -86,7 +95,7 @@ export default function RejectionWithAutoReply({
         body: [
           "The process begins with an application, followed by a 15-minute call with Julian if you're shortlisted.",
           "He asked why I cared about the problem I was solving, what progress I had made, and why I believed I was the right person to tackle it.",
-          "The focus wasn’t on technical ability or startup experience. It was on whether the problem was real, urgent, and solvable quickly.",
+          "The focus wasn't on technical ability or startup experience. It was on whether the problem was real, urgent, and solvable quickly.",
           "He mentioned one team estimated 2–3 months just to launch an MVP, which he felt completely missed the mark.",
           "It felt like the application already filtered for capability. The interview was about conviction and traction.",
           "With that, this fellowship feels designed for solo founders who already have some momentum, especially those with paying customers and a clear path to growth in SF.",
@@ -107,12 +116,21 @@ export default function RejectionWithAutoReply({
         onClick={handleClick}
       >
         <div className="relative">
-          <span className="text-neutral-600 font-lateef tracking-wide text-xl hover:text-neutral-800 transition-colors duration-300">
+          <span
+            ref={textRef}
+            className="text-neutral-600 font-lateef tracking-wide text-xl hover:text-neutral-800 transition-colors duration-300"
+          >
             {company}
           </span>
 
-          {/* Subtle underline that appears on hover */}
-          <div className="absolute bottom-0 left-0 w-0 h-px bg-blue-500 transition-all duration-500 ease-out group-hover:w-full opacity-0 group-hover:opacity-100" />
+          {/* Subtle underline that appears on hover - limited to text width */}
+          <div
+            className="absolute bottom-0 left-0 h-px group-hover:scale-x-100 scale-x-0 transition-transform duration-500 ease-out origin-left"
+            style={{
+              backgroundColor: "#5AA8D6",
+              width: `${textWidth}px`,
+            }}
+          />
         </div>
       </div>
 
