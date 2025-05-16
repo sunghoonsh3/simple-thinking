@@ -12,6 +12,7 @@ export default function RejectionWithAutoReply({
   const [textWidth, setTextWidth] = useState(0);
   const replyRef = useRef(null);
   const textRef = useRef(null);
+  const emailRef = useRef(null);
 
   // Measure text width on component mount
   useEffect(() => {
@@ -19,6 +20,26 @@ export default function RejectionWithAutoReply({
       setTextWidth(textRef.current.offsetWidth);
     }
   }, []);
+
+  // Handle click outside email to close it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showEmail &&
+        emailRef.current &&
+        !emailRef.current.contains(event.target)
+      ) {
+        setShowEmail(false);
+        setEmailJustClosed(true);
+      }
+    };
+
+    if (showEmail) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [showEmail]);
 
   // Show reply when email is closed (after being opened)
   useEffect(() => {
@@ -136,7 +157,7 @@ export default function RejectionWithAutoReply({
 
       {/* Email Modal */}
       {showEmail && (
-        <div className="relative w-full max-w-md">
+        <div ref={emailRef} className="relative w-full max-w-md">
           <div className="bg-white border border-gray-200 rounded-lg shadow-xl transition-all duration-300 ease-out">
             {/* Email Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50 rounded-t-lg">
