@@ -100,7 +100,7 @@ export default function About() {
         <p>
           and ... if u like what i do and wanna chat, book&nbsp;
           <a
-            href="https://buymeacoffee.com/tristanshin"
+            href="https://calendly.com/sunghoonsh3/30min"
             className="underline decoration-underlineBlue decoration-1 underline-offset-4"
           >
             a coffee chat.
