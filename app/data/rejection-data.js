@@ -2,7 +2,6 @@
 export const rejectionsData = {
   LeapYear: {
     subject: "LeapYear April 2025 - Application Update",
-    // sender: "build@takeleapyear.com",
     applicantName: "Tristan",
     body: [
       {
@@ -32,7 +31,6 @@ export const rejectionsData = {
 
   Telora: {
     subject: "Summer 2025 Fellowship Decision",
-    // sender: "eliam@hello.jointelora.com",
     applicantName: "Tristan",
     body: [
       {
@@ -58,7 +56,6 @@ export const rejectionsData = {
 
   "Solo Founders": {
     subject: "Solo Founders Program — Application Outcome",
-    // sender: "julian@solofounders.vc",
     applicantName: "Tristan",
     body: [
       {
