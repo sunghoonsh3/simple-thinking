@@ -36,18 +36,24 @@ export const rejectionsData = {
     applicantName: "Tristan",
     body: [
       {
-        text: "Unfortunately, we did not select your team for the summer 2025 fellowship.",
+        text: "Tristan,",
+      },
+      {
+        text: "Thank you for applying to Telora. Unfortunately, your application was not selected for the summer 2025 fellowship.",
         highlight: true,
       },
       {
-        text: "Don't take it personally. We only interview a fraction of the applications we get. If you made it this far, there’s a lot we liked and you should apply again.",
+        text: "Your case is unique because your application was particularly promising. We invited you to interview, but it doesn’t seem like we had a chance to connect. Please let me know what kept you from meeting with me so we can improve our interview process.",
       },
       {
-        text: "Please reach out if anything significant changes. I’d genuinely like to stay in touch.",
+        text: "Applications are now open for fellowships starting in January and June of 2026. If you still want to start a startup, you should definitely apply again.",
+      },
+      {
+        text: "Have a great summer,",
       },
     ],
-    signature: "Thank you",
-    timestamp: "Fri, Mar 14, 9:37 AM",
+    signature: "EM",
+    timestamp: "Sun, May 18, 7:08 AM",
   },
 
   "Solo Founders": {
