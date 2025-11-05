@@ -178,9 +178,10 @@ export default function RejectionWithAutoReply({
               </div>
 
               {/* Close button */}
+              {/* Close button */}
               <button
                 onClick={handleClose}
-                className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center transition-all duration-300 hover:bg-gray-300"
+                className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center transition-all duration-300 hover:bg-gray-300 relative group"
               >
                 <svg
                   className="w-4 h-4 text-gray-600"
@@ -195,6 +196,13 @@ export default function RejectionWithAutoReply({
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+
+                {/* Tooltip hint */}
+                <div className="absolute top-8 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                  <span className="text-[11px] text-gray-500 whitespace-nowrap bg-white px-2 py-1 rounded shadow-sm border border-gray-100">
+                    close to see my tips
+                  </span>
+                </div>
               </button>
             </div>
 

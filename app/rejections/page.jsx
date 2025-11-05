@@ -13,9 +13,34 @@ export default function Rejections() {
         <div>
           {/* Hero Section - keeping original */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
-            <h1 className="text-2xl 2xl:text-3xl font-lateef">
-              "after a careful consideration..."
-            </h1>
+            <div className="text-center">
+              {/* Small cross above */}
+              {/* <div className="mb-8 text-gray-400">
+                <svg
+                  width="20"
+                  height="30"
+                  viewBox="0 0 20 30"
+                  className="mx-auto"
+                >
+                  <path
+                    d="M10 0 L10 30 M0 10 L20 10"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div> */}
+
+              <h1 className="text-2xl md:text-3xl tracking-[0.1em]">
+                <span className="font-serif italic text-gray-800">
+                  felix culpa
+                </span>
+              </h1>
+
+              <div className="mt-8 space-y-1 text-xs text-gray-500">
+                <p>the blessed fall</p>
+              </div>
+            </div>
           </section>
 
           <SectionTitle title="rejections in 2025" alignment="left" />

@@ -12,6 +12,35 @@ export const metadata = {
   description: "Cool stuff and real-life lessons about building @ atti",
 };
 
+// // Server component for thoughts on startup/industry
+// async function ThoughtsSection() {
+//   const allPosts = await getAllPosts();
+
+//   const thoughtsPosts = allPosts
+//     .filter((post) => post.metadata?.subcategory === "thoughts")
+//     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
+//     .slice(0, 4);
+
+//   return (
+//     <section className="w-full min-h-screen">
+//       <SectionTitle title="thoughts on startup/industry" alignment="left" />
+//       {thoughtsPosts.length > 0 ? (
+//         thoughtsPosts.map((post) => (
+//           <StackBlogPreview
+//             key={post.slug}
+//             title={post.metadata.title}
+//             date={post.metadata.date}
+//             content={post.preview}
+//             slug={post.slug}
+//           />
+//         ))
+//       ) : (
+//         <p className="text-center text-gray-500 mt-8">No thoughts yet...</p>
+//       )}
+//     </section>
+//   );
+// }
+
 // Server component that pre-fetches and filters cool stuff posts
 async function CoolStuffSection() {
   const allPosts = await getAllPosts();
@@ -23,7 +52,7 @@ async function CoolStuffSection() {
 
   return (
     <section className="w-full h-screen">
-      <SectionTitle title="cool stuff" alignment="left" />
+      <SectionTitle title="random finds" alignment="left" />
       {coolStuffPosts.length > 0 ? (
         coolStuffPosts.map((post) => (
           <StackBlogPreview
@@ -92,6 +121,12 @@ export default function Startup() {
               building @ atti
             </h1>
           </section>
+
+          {/* <Suspense
+            fallback={<SectionSkeleton title="thoughts on startup/industry" />}
+          >
+            <ThoughtsSection />
+          </Suspense> */}
 
           {/* Cool Stuff Posts with Suspense */}
           <Suspense fallback={<SectionSkeleton title="cool stuff" />}>
