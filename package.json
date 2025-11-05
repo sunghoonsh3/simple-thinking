@@ -16,10 +16,10 @@
     "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "next": "15.1.4",
+    "next": "^15.1.4",
     "next-mdx-remote": "^5.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "remark": "^15.0.1",
     "resend": "^4.1.2",
     "strip-markdown": "^6.0.0"
