@@ -5,9 +5,11 @@ import { notFound } from "next/navigation";
 import Footer from "@/app/components/Footer";
 
 // Static metadata for SEO
-export async function generateMetadata(props) {
-  // Get post directly without intermediate variables
-  const post = await getPostBySlug(props.params.slug);
+export async function generateMetadata({ params: paramsPromise }) {
+  // ✅ params is now a promise; await it first
+  const params = await paramsPromise;
+
+  const post = await getPostBySlug(params.slug);
 
   if (!post) return { title: "Post not found" };
 
@@ -74,10 +76,12 @@ const MdxComponents = {
   ),
 };
 
-// Main component - now a server component that avoids intermediate assignment of params
-export default async function BlogPost(props) {
-  // Get post directly without intermediate variables
-  const post = await getPostBySlug(props.params.slug);
+// Main component - server component
+export default async function BlogPost({ params: paramsPromise }) {
+  // ✅ same fix here: await params first
+  const params = await paramsPromise;
+
+  const post = await getPostBySlug(params.slug);
 
   if (!post) return notFound();
 
