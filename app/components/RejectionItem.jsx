@@ -66,7 +66,8 @@ export default function RejectionItem({
       </div>
 
       {/* Email Modal - Positioned to not jump too high */}
-      {showEmail && (
+      {/* Email Modal */}
+      {showEmail && rejectionData && (
         <div className="absolute top-10 left-0 w-96 bg-white border border-gray-200 rounded-lg shadow-xl transition-all duration-300 ease-out z-50">
           {/* Email Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50 rounded-t-lg">
@@ -109,10 +110,6 @@ export default function RejectionItem({
 
           {/* Email Body */}
           <div className="p-4 space-y-3 text-sm text-gray-700 leading-relaxed">
-            <p className="font-medium">
-              Dear {rejectionData.applicantName || "Applicant"},
-            </p>
-
             {rejectionData.body.map((paragraph, index) => (
               <p key={index}>
                 {paragraph.highlight ? (

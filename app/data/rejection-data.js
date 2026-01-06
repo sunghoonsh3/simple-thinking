@@ -5,6 +5,9 @@ export const rejectionsData = {
     applicantName: "Tristan",
     body: [
       {
+        text: "Tristan, Boris, Hamza -",
+      },
+      {
         text: "We apologize for the slow response. Thank you for applying to LeapYear and for your patience while we have been reviewing applications.",
       },
       {
@@ -83,10 +86,145 @@ export const rejectionsData = {
       "Thanks again for sharing what you’re building with me.\n\nJulian",
     timestamp: "Mon, Apr 21, 2:57 PM",
   },
-};
 
+  YC: {
+    subject: "YC Application Update",
+    applicantName: "Tristan",
+    body: [
+      {
+        text: "Hi Anish and Tristan,",
+      },
+      {
+        text: "Thanks for coming out to meet with Ankit and I today.",
+      },
+      {
+        text: "Unfortunately, we've decided not to fund Squire this batch.",
+        highlight: true,
+      },
+      {
+        text: "I had a few concerns.",
+      },
+      {
+        text: "1) You two haven't really worked on things together before and are fairly early in your co-founder relationship.",
+      },
+      {
+        text: "2) This idea also feels really early. I don't think I came away with any new insights on the problem space. This makes sense since you guys just started.",
+      },
+      {
+        text: "I would love to keep in touch, and I think it makes sense for you to keep working together and re-apply in X25.",
+      },
+    ],
+    signature: "Harshita",
+    timestamp: "Thu, Nov 20, 2025, 2:26 AM",
+  },
+
+  NEA: {
+    subject: "NEA Undergraduate Fellowship — Application Update",
+    applicantName: "Tristan",
+    body: [
+      {
+        text: "Hello Tristan,",
+      },
+      {
+        text: "Thank you for applying to the NEA Fellowship and for taking the time to speak to a member of our team.",
+      },
+      {
+        text: "We regret to inform you that you have not been selected for this year’s fellowship cohort.",
+        highlight: true,
+      },
+      {
+        text: "We were consistently impressed by the caliber of applicants we met this year. The passion, innovation, and entrepreneurial spirit you demonstrated made the selection process challenging and competitive.",
+      },
+      {
+        text: "We recognize the thoughtfulness and hard work you invested in your application and encourage you to continue pursuing your interests in venture.",
+      },
+      {
+        text: "If you have any questions about future opportunities with NEA, please feel free to reach out. We are committed to fostering emerging talent in the venture capital community and are here to support you in your professional development.",
+      },
+      {
+        text: "We wish you the best and hope to stay in touch.",
+      },
+    ],
+    signature: "The NEA Fellowship Team",
+    timestamp: "Thu, Dec 4, 2025, 4:27 PM",
+  },
+
+  PearVC: {
+    subject: "Pear Fellows Program — Application Update",
+    applicantName: "Tristan",
+    body: [
+      {
+        text: "Thank you for applying to the Pear Fellows program and for speaking with me last week.",
+      },
+      {
+        text: "Unfortunately, you were not selected as a Fellow this time around.",
+        highlight: true,
+      },
+      {
+        text: "We had over 500 people apply this year, which made it a very competitive and difficult decision.",
+      },
+      {
+        text: "That said, I thought you were really impressive and I would love for you to be a friend of Pear going forward.",
+      },
+      {
+        text: "PearX applications open on August 29. If you have friends working on startups, PearX accepts about 20 teams per batch and invests between $500K and $2M on competitive terms.",
+      },
+      {
+        text: "If you know any great founders, please connect them to me. No idea is too early. Many people have become Pear Fellows by introducing us to high quality founders.",
+      },
+      {
+        text: "If you are interested in working at a startup, you can also explore roles at Pear portfolio companies or subscribe to the Pear VC newsletter.",
+      },
+      {
+        text: "Please do not hesitate to reach out if I can ever be helpful with advice or introductions. Startups and venture are a long game, and I am sure our paths will cross again soon.",
+        highlight: true,
+      },
+    ],
+    signature: "Khalil",
+    timestamp: "Mon, Aug 25, 2025, 9:58 AM",
+  },
+
+  "Dorm Room Fund": {
+    subject: "DRF Fellowship — Application Update",
+    applicantName: "Tristan",
+    body: [
+      {
+        text: "Hi, Tristan —",
+      },
+      {
+        text: "Thank you again for spending time with us during the interview process. We know this wasn’t just about submitting a written application. It also meant carving out time to coordinate with us and sharing more of yourself in conversation.",
+      },
+      {
+        text: "After careful consideration, we won’t be moving forward with your candidacy this year.",
+        highlight: true,
+      },
+      {
+        text: "Earning an interview is no small feat. You rose to the top from among hundreds of applicants. The process is highly competitive, and sometimes exceptional candidates do not move forward simply because we are balancing representation across schools and programs.",
+      },
+      {
+        text: "Almost 30% of our current teammates secured their spot after applying across multiple years, which shows that persistence often pays off at DRF.",
+      },
+      {
+        text: "Because we are a small team navigating an overwhelming number of applications, we unfortunately cannot offer immediate feedback on individual interviews. If feedback would be useful later, you are welcome to reach out once our new team is in place.",
+      },
+      {
+        text: "We are glad to have had the chance to get to know you, and we hope you will stay connected with DRF in the future, whether that means referring founders, joining events, or applying again.",
+      },
+      {
+        text: "This was a highly competitive process, and while we are confident in our decision, we also know that many talented people like you will go on to do extraordinary things.",
+        highlight: true,
+      },
+    ],
+    signature: "Madi, Molly, and the DRF Team",
+    timestamp: "DRF Interview Cycle",
+  },
+};
 export const rejectionsList = [
   { company: "LeapYear", position: "Fellowship" },
   { company: "Telora", position: "Fellowship" },
   { company: "Solo Founders", position: "Fellowship" },
+  { company: "YC", position: "Startup Funding" },
+  { company: "PearVC", position: "Fellowship" },
+  { company: "NEA", position: "Fellowship" },
+  { company: "Dorm Room Fund", position: "Fellowship" },
 ];

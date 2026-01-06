@@ -6,13 +6,9 @@ import Footer from "@/app/components/Footer";
 
 // Static metadata for SEO
 export async function generateMetadata({ params: paramsPromise }) {
-  // ✅ params is now a promise; await it first
   const params = await paramsPromise;
-
   const post = await getPostBySlug(params.slug);
-
   if (!post) return { title: "Post not found" };
-
   return {
     title: post.metadata?.title || "Blog Post",
     description:
@@ -55,6 +51,7 @@ const MdxComponents = {
       rel="noopener noreferrer"
     />
   ),
+
   p: (props) => (
     <p
       {...props}
@@ -63,6 +60,19 @@ const MdxComponents = {
   ),
   h3: (props) => <h3 {...props} className="text-lg font-semibold mb-4" />,
   em: (props) => <span {...props} className="text-sm font-light italic mb-4" />,
+  ul: (props) => (
+    <ul
+      {...props}
+      className="list-disc list-inside text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6 space-y-2"
+    />
+  ),
+  ol: (props) => (
+    <ol
+      {...props}
+      className="list-decimal list-inside text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6 space-y-2"
+    />
+  ),
+  li: (props) => <li {...props} className="text-gray-800 leading-relaxed" />,
   iframe: (props) => (
     <div className="relative pb-[56.25%] h-0 max-w-2xl mx-auto my-6 rounded-lg overflow-hidden">
       <iframe
@@ -78,11 +88,8 @@ const MdxComponents = {
 
 // Main component - server component
 export default async function BlogPost({ params: paramsPromise }) {
-  // ✅ same fix here: await params first
   const params = await paramsPromise;
-
   const post = await getPostBySlug(params.slug);
-
   if (!post) return notFound();
 
   return (
@@ -93,7 +100,6 @@ export default async function BlogPost({ params: paramsPromise }) {
           <h1 className="text-lg sm:text-xl lg:text-3xl font-serif mb-6 lg:mb-12">
             {post.metadata?.title || "Untitled"}
           </h1>
-
           {/* Date and Category */}
           <div className="flex items-center font-serif text-md lg:text-lg mb-6 lg:mb-12 space-x-4">
             <time className="text-gray-600">
@@ -104,7 +110,6 @@ export default async function BlogPost({ params: paramsPromise }) {
               {post.metadata?.category || "Uncategorized"}
             </span>
           </div>
-
           {/* Content */}
           <div className="prose prose-lg font-serif text-md lg:text-lg mx-auto">
             <MDXRemote source={post.content} components={MdxComponents} />

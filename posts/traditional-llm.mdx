@@ -1,0 +1,214 @@
+---
+title: "Turning Raw Data Into Intelligence"
+date: "Friday, December 12, 2025"
+author: "Tristan Shin"
+category: "startup"
+subcategory: "thoughts & finds"
+preview: "Over the last few years, industries built on documents, emails, contracts, and knowledge work have shown what happens when decades of underused data finally become machine-readable..."
+---
+
+Over the last few years, industries built on documents, emails, contracts, and knowledge work have shown what happens when decades of underused data finally become machine-readable. Consulting, legal, procurement, and other professional services saw rapid gains once general-purpose LLMs could read, organize, and act on their unstructured information, automating repetitive workflows specific to each vertical. Early movers such as Glean ($7.2B), Harvey ($8B), and PermitFlow ($500M) demonstrated that when an industry has a large historical data footprint and LLMs can interpret it, a category-defining company can emerge very quickly.
+
+But this success story has a boundary. Many other data-rich sectors cannot unlock value through LLMs because their data does not look like language. Logs, sensor streams, machine telemetry, transactions, and real-time alerts are high-volume, high-entropy, and deeply structural. They require models that understand system behavior, timing, causality, and anomalies. General-purpose LLMs, built for text generation, break under these constraints. They cannot reliably process streaming data, reason over long time series, or operate at the latency required for security, industrial, or physical-world systems.
+
+This is where the next wave of breakout startups will come from. Sectors overflowing with raw operational data but structurally incompatible with general purpose LLMs are now becoming accessible through specialized foundation models. These models are trained on large, unique, machine-native datasets and are optimized to discover structure, patterns, and causality in complex digital and physical systems. They do not generate prose. They generate understanding.
+
+And that capability, not language, is what the next unicorn enterprise AI opportunity is built on.
+
+<div className="mb-6">
+  <u>The scale of the opportunity is already visible in U.S. spend</u>
+</div>
+
+There is no single monolithic market definition that captures the shape of this category.
+We can triangulate it by looking at adjacent AI markets where general-purpose LLMs
+have not been effectively adopted because they struggle with raw-data modalities
+and real-time latency requirements.
+
+In the U.S. alone:
+
+- AI in cybersecurity is expected to grow [from $4.75B (2024) to $10.94B by 2030](https://www.google.com/url?q=https://www.grandviewresearch.com/horizon/outlook/ai-in-cybersecurity-market/united-states&sa=D&source=docs&ust=1767666346896721&usg=AOvVaw1F45TD8XsqE-WigBTebENy).
+- Fraud detection & prevention is expected to grow from [$9.30B (2024) to $24.29B by 2030](https://www.grandviewresearch.com/horizon/outlook/ai-in-energy-market/united-states?utm_source).
+- AI in energy is expected to grow from [$2.60B (2024) to $12.78B by 2030](https://www.grandviewresearch.com/horizon/outlook/artificial-intelligence-in-supply-chain-market/united-states).
+- AI in supply chain is expected to grow from [$1.62B (2023) to $14.38B by 2030](https://www.grandviewresearch.com/horizon/outlook/artificial-intelligence-in-supply-chain-market/united-states).
+- AI in manufacturing is expected to grow from [$1.14B (2024) to $7.83B by 2030](https://www.grandviewresearch.com/horizon/outlook/artificial-intelligence-in-manufacturing-market/united-states).
+
+These five categories alone sum to roughly $70B of U.S. opportunity by 2030 and that excludes robotics autonomy, industrial control security, and other machine-data-heavy domains. (This is not a formal TAM for a single product line; it's an adjacent spend map that reveals how many budget owners are converging on the same capability.)
+
+The macro signal is also clear: enterprise spending on generative AI has accelerated sharply, with estimates suggesting $37B spent in 2025 (up from $11.5B in 2024), indicating growing willingness to fund production AI that shows measurable ROI.
+
+<div className="mb-6">
+  <u>A deeper look across the industries</u>
+</div>
+
+Across the target industries, the pain looks different but rhymes:
+
+### Cybersecurity & enterprise IT
+
+Security operations centers are flooded with logs and alerts. In fact, the average security operations team receives over [11,000 alerts per day](https://cymulate.com/cybersecurity-glossary/alert-fatigue/). The limiting resource is not data but interpretation and speed. This has created demand for models that can extract patterns from large datasets and shorten investigation cycles across threat discovery, incident response, and adjacent risk workflows.
+
+### Industrial control systems & manufacturing
+
+Factories collect enormous telemetry, but failures still get diagnosed late. The cost of downtime is high enough that even small improvements matter. A recent report highlights that unplanned downtime costs industrial firms up to [$1.4 trillion in annual losses](https://www.theaemt.com/resource/the-true-cost-of-downtime-2024-a-comprehensive-analysis.html) for the world's largest companies and the growing role of predictive approaches enabled by machine data.
+
+### Power grids & energy
+
+With renewables, distributed generation, and rising load uncertainty, grid operators face growing complexity. The U.S. AI-in-energy market's rapid growth reflects the push to use AI for demand forecasting, safety, and infrastructure monitoring.
+
+### Supply chain
+
+Tariffs, geopolitics, and post-COVID redesigns continue to put pressure on resilience. Surveys show a large share of companies reporting material disruption impacts from new tariff regimes, reinforcing demand for earlier detection and smarter planning.
+
+### Financial fraud
+
+Fraud teams sit on vast transaction streams. For instance, Mastercard alone reports securing about [159 billion transactions annually](https://www.mastercard.com/news/ap/en/perspectives/en/2025/from-fighting-fraud-to-fueling-personalization-ai-at-scale-is-redefining-how-commerce-works-online/). The opportunity is faster, more accurate detection that reduces both losses and false positives — a market already on track for major growth in the U.S.
+
+<div className="mb-6">
+  <u>Why general-purpose LLMs often fail here</u>
+</div>
+
+As aforementioned, general-purpose large language models (LLMs) are extraordinary at text. But many machine-data problems are not text problems.
+
+They break for five simple reasons:
+
+1. Different data shape.  
+   Logs, time series, and sensors are numbers and events, not natural language.
+
+2. Weak temporal understanding without tailored design.  
+   [Research](https://www.ijcai.org/proceedings/2024/0921.pdf) on using LLMs for time series highlights the modality gap and the need for specialized representations and objectives. You cannot reliably paste raw time series into a text model and expect robust results.
+
+3. Objective mismatch.  
+   LLMs are trained to predict the next token. But operational systems need models optimized for anomaly detection, root cause extraction, forecasting, and control.
+
+4. High cost of wrong answers.  
+   In industrial, energy, and security contexts, hallucinations and overconfident guesses are unacceptable.
+
+5. Data privacy and infrastructure constraints.  
+   Sensitive logs and telemetry often cannot be freely shared with external model providers.
+
+<div className="mb-6">
+  <u>Why specialized "foundation models on raw data" win</u>
+</div>
+
+These new models outperform general LLMs because they are built around the reality of machine data:
+
+- They learn the grammar of systems, not just language.  
+  A power grid, a factory line, or a cloud environment has repeatable operational signatures.
+
+- They incorporate domain constraints.  
+  Physics, network topology, control rules, or transactional behavior patterns can be encoded into training and evaluation frameworks.
+
+- They benefit from high frequency, high volume feedback loops.  
+  When a model lives inside a production environment, it gets constant signal on whether it predicted a failure or missed one.
+
+- They create compounding data moats.  
+  Each deployment produces better labeled events, which improves future detection and prediction.
+
+Gartner's macro forecast aligns with this thesis: organizations are expected to implement far more task-specific or domain models than general-purpose LLMs by 2027, indicating a broad shift toward specialized AI in production. Indeed, moving from models where pattern extraction is a byproduct of generation to models optimized for pattern discovery as the primary output will be key to success.
+
+<div className="mb-6">
+  <p> Meet the early archetypes </p>
+</div>
+
+### Conway (pattern discovery across systems)
+
+Conway's framing is emblematic of the category: a foundational pattern-discovery model for any log- or sensor-heavy system, with early positioning across cybersecurity, industrial systems, power, fraud, supply chain, and manufacturing. Their public materials emphasize shortened investigation cycles and evolving detection rather than static rules. The company raised an undisclosed round from Kleiner Perkins.
+
+### Archetype AI (physical intelligence)
+
+Archetype is betting on "physical AI" trained across sensor modalities to build reusable intelligence for real-world systems. The company announced a $35M Series A to scale its platform and model ambitions. An example of its model's application: Autonomously monitor site progress, safety compliance, and equipment utilization through multimodal sensor fusion with safety and workflow-verification agents in construction.
+
+### AlphaZ (multi-robot mission intelligence)
+
+AlphaZ is building a decision-making foundation model ("GADM") that coordinates heterogeneous robots and sensors for security, inspection, and data-collection missions. The company has early commercial traction (>10 customers including John Deere and security providers), ~$500K ARR with a goal of $1.5–2M in 6–9 months, and is raising a $20M seed following a $6.25M pre-seed.
+
+### Skild AI (multi-robot mission intelligence)
+
+Skild AI is building a general-purpose robotics foundation model, often described as a "robot brain," designed to work across many robot types, tasks, and environments. Rather than training narrow, task-specific policies, Skild focuses on a single reusable model that can transfer skills across domains using large-scale robot interaction data. The company positions itself as a horizontal intelligence layer that sits above hardware, enabling robots to adapt and generalize without being re-engineered for each use case. Skild AI raised a $300M Series A at a roughly $1.5B valuation and followed it with a $500M Series B at an estimated $4.7B valuation, making it one of the most highly capitalized bets on foundational robot intelligence.
+
+In aggregate, these four companies anchor the category's core claim: the next platform wave will be owned by models that turn high-entropy operational bytes into trusted, low-latency decisions across both digital and physical systems, with wedge-to-platform expansion driven by measurable time-to-truth and time-to-action gains.
+
+<div className="mb-6">
+  <u> Contrarian opinion </u>
+</div>
+
+The strongest pushback to this thesis is not that machine data is valuable. Everyone agrees it is. The pushback is that new foundation models are unnecessary.
+
+The contrarian view has four main claims.
+
+1. Machine data can be "packaged" into language
+
+In real deployments, teams rarely feed raw streams directly into models. They summarize logs, window time series, attach schemas, and add context like topology maps and runbooks. Once this preprocessing is done, the argument goes, the data looks close enough to language for a general LLM to handle.
+
+Under this view, the hard problem is data plumbing and evaluation, not training new models.
+
+2. The moat is workflow and distribution, not the model
+
+In security, manufacturing, and enterprise IT, the hardest problems are permissions, integrations, compliance, alert routing, and change management. Incumbents already own the pipes and the buyers.
+
+If a general-purpose model is "good enough," incumbents can bundle it into existing products and contracts. Startups building specialized foundation models risk being squeezed out regardless of technical quality.
+
+3. Most value is detection and automation, not generation
+
+Machine-data use cases are usually about catching anomalies, predicting failures, and triggering actions. Many of these wins come from cheaper approaches like classical anomaly detection, specialized time-series models, and rules plus monitoring.
+
+In this framing, LLMs are copilots that explain and orchestrate, not the core intelligence.
+
+4. Specialized foundation models are expensive and risky
+
+Training and maintaining new foundation models is costly. Buyers do not pay for novelty. They pay for fewer incidents and faster resolution. From this perspective, the winning strategy is to assemble platforms that combine data access, workflows, and tooling, using whichever models are easiest to deploy.
+
+<div className="mb-6">
+  <u> Why the contrarian argument breaks down </u>
+</div>
+
+The contrarian position relies on the assumption that general-purpose AI converges into a single, dominant model that is "good enough" everywhere.
+
+The market is already showing that this assumption is false.
+
+General-purpose AI is fragmenting, not converging
+
+Even inside the category of general-purpose models, users are actively splitting by task.
+
+Recent market data shows this clearly:
+
+- Gemini's momentum.
+
+  Sensor Tower data reported that ChatGPT's global monthly active users grew only around 6 percent from August to November 2025, while Gemini grew roughly [30 percent in the same period](https://techcrunch.com/2025/12/05/chatgpts-user-growth-has-slowed-report-finds/). Reporting attributes a meaningful part of Gemini's adoption to its image capabilities, including Google's Nano Banana model. Users are choosing it because it feels better for multimodal tasks.
+
+- Distribution shapes preference.
+
+  The same reporting notes that roughly twice as many U.S. Android users engage with Gemini through the Android operating system as through the standalone app. Lower friction beats ideology. People use what works and what is already there.
+
+- OpenAI's competitive response.
+
+  Reuters reported that OpenAI issued an internal code red and rapidly pushed GPT-5.2 amid pressure from Gemini 3. That is what real competition looks like when users can switch models based on quality.
+
+If general-purpose AI truly converged, none of this would be happening.
+
+Claude proves "best tool for the job" wins
+
+Anthropic's Claude provides even clearer evidence.
+
+- Developer pull.
+
+Anthropic announced that Claude Code reached a one billion dollar annualized revenue run rate within six months. Developers are not paying because Claude is a generic chatbot. They are paying because it feels better for coding workflows.
+
+- Enterprise adoption.
+
+Reuters reported that Accenture entered a multi-year partnership with Anthropic and planned to train around [30,000 employees on Claude](https://www.reuters.com/business/accenture-anthropic-strike-multi-year-partnership-boost-ai-adoption-2025-12-09/). This highlights real enterprise trust, especially in coding and regulated environments.
+
+Again, this is fragmentation inside general-purpose AI itself.
+
+<div className="mb-6">
+  <u> What comes next? </u>
+</div>
+
+The next enduring AI platforms in the U.S. will not be defined by how well they imitate language. They will be defined by how well they convert raw operational exhaust into trusted decisions. Across cybersecurity, fraud, manufacturing, power, supply chain, and robotics, the bottleneck is no longer data collection. It is system-level interpretation at speed. That gap drives real losses. Breaches take too long to contain. Fraud evolves faster than rule sets. Downtime arrives without early warning. Complex physical systems still rely on reactive human triage.
+
+Specialized foundation models trained on logs, telemetry, time-series, and multimodal sensors attack this problem directly. They outperform general-purpose LLMs because they are native to the structure of machine data and optimized for the real objectives that matter in operations. Anomaly detection, root-cause reasoning, forecasting, and low-latency control. The result is not just better analytics, but fewer surprises and faster recovery inside the highest-stakes workflows.
+
+The opportunity is dual and compounding. Digital pattern discovery in security, fraud, and IT operations reduces alert overload and investigation time by turning noisy events into prioritized truth. Physical pattern discovery in industrial systems, grids, robotics, and supply chains shifts operations from reactive to predictive, reducing downtime and improving safety at scale. As these two frontiers mature together, they reinforce each other. More reliable infrastructure generates cleaner machine data. Better machine-data understanding strengthens resilience across both IT and OT.
+
+For Seed to Series A investors, this category offers a rare platform shape with clear early ROI. The likely winners will pair vertical wedges with immediate budget pull, such as SOC automation, fraud case compression, plant-level anomaly detection, and grid forecasting, with horizontal expansion into a cross-industry intelligence layer.
+
+The companies that win will not be remembered as AI features. They will be the owners of the decision rails for modern systems, the foundational layer that sits between raw bytes and real-world action.

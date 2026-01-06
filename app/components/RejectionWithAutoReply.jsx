@@ -123,6 +123,56 @@ export default function RejectionWithAutoReply({
           "If you're building something people are already paying for, apply — and focus on showing real progress and a bold plan, not just your skills.",
         ],
       },
+      YC: {
+        subject: "re: conviction over politeness",
+        body: [
+          "Anish, a friend from KP Fellowship, and I applied with Squire, an app meant to act like Jarvis: sitting on your desktop, listening to conversations, and automating repetitive work.",
+          "I was not fully convinced. Anish had been working on it alone, and I joined late.",
+          "The interview process is simple. You can do it online, but we chose to do it in person and I flew to San Francisco.",
+          "The interview lasts about 30 minutes. If you get a call later that day, you are in. If you get an email, you are out.",
+          "There is no shortage of YC advice, but one thing stood out.",
+          "You need extreme conviction. People who got in said you have to sound so confident it almost feels arrogant, especially as a student.",
+          "You do not have a long track record, so confidence becomes the signal.",
+          "We lacked that level of conviction and presence, and it showed.",
+        ],
+      },
+
+      "Dorm Room Fund": {
+        subject: "re: connect with your student interviewers",
+        body: [
+          "You submit an application and are interviewed by the student team.",
+          "I made it to the second round. After that, there is a final-day selection for admitted fellows.",
+          "I did not reach that stage, so I cannot speak to it.",
+          "Since students run the process, it felt less structured and the selection criteria were not always clear.",
+          "I did not ask for feedback, but I wish I had applied earlier so I could have tried again.",
+          "It is a strong program and one I would have enjoyed.",
+          "My advice is to learn what your interviewers care about and shape the conversation around their interests.",
+        ],
+      },
+
+      NEA: {
+        subject: "re: finance background helps more than technical",
+        body: [
+          "The process has multiple rounds, but I only reached the first, an interview with a partner.",
+          "She asked about my career goals and the types of startups I was interested in, typical VC questions.",
+          "I did not advance, but she gave me her phone number and said she stays in touch with everyone at this stage.",
+          "I wish I had made it further. Past fellows say NEA gives one of the best inside looks at venture capital.",
+          "My impression was that they favored candidates with finance backgrounds over purely technical ones.",
+          "If you apply, strengthen your finance knowledge and have evidence to show it.",
+          "I still stay in touch with the interviewer and have referred deals to her. One is currently being explored, which has been fascinating to watch.",
+        ],
+      },
+
+      PearVC: {
+        subject: "re: strong ecosystem and stable Wi-Fi required",
+        body: [
+          "The process starts with a call with one of the VCs who runs the fellowship.",
+          "It was clear they value people embedded in strong startup ecosystems, since fellows are used heavily for sourcing.",
+          "I spoke briefly with Khalil. My Wi-Fi was unstable, so the call was audio-only and felt rushed.",
+          "I would recommend applying if you attend schools like Harvard, MIT, CMU, or Berkeley.",
+          "And make sure your internet works.",
+        ],
+      },
     };
     return tips[companyName] || tips["LeapYear"];
   };
@@ -208,10 +258,6 @@ export default function RejectionWithAutoReply({
 
             {/* Email Body */}
             <div className="p-4 space-y-3 text-sm text-gray-700 leading-relaxed">
-              <p className="font-medium">
-                Dear {rejectionData.applicantName || "Applicant"},
-              </p>
-
               {rejectionData.body.map((paragraph, index) => (
                 <p key={index}>
                   {paragraph.highlight ? (

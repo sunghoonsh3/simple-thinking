@@ -46,13 +46,13 @@ async function CoolStuffSection() {
   const allPosts = await getAllPosts();
 
   const coolStuffPosts = allPosts
-    .filter((post) => post.metadata?.subcategory === "cool stuff")
+    .filter((post) => post.metadata?.subcategory === "thoughts & finds")
     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
     .slice(0, 4);
 
   return (
     <section className="w-full h-screen">
-      <SectionTitle title="random finds" alignment="left" />
+      <SectionTitle title="thoughts & finds" alignment="left" />
       {coolStuffPosts.length > 0 ? (
         coolStuffPosts.map((post) => (
           <StackBlogPreview
