@@ -8,7 +8,7 @@ import StackBlogPreviewKr from "../components/StackBlogPreviewKr";
 
 // Static metadata for the page
 export const metadata = {
-  title: "Startup Blog",
+  title: "Startup",
   description: "Cool stuff and real-life lessons about building @ atti",
 };
 

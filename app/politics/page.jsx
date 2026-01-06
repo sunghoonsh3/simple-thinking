@@ -8,7 +8,7 @@ import Image from "next/image";
 
 // Static metadata for the page
 export const metadata = {
-  title: "Politics Blog",
+  title: "Politics",
   description: "Thoughts on political events and policies",
 };
 
