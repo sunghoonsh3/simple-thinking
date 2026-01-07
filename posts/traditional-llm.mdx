@@ -70,20 +70,25 @@ As aforementioned, general-purpose large language models (LLMs) are extraordinar
 
 They break for five simple reasons:
 
-1. Different data shape.  
-   Logs, time series, and sensors are numbers and events, not natural language.
+1. Different data shape.
 
-2. Weak temporal understanding without tailored design.  
-   [Research](https://www.ijcai.org/proceedings/2024/0921.pdf) on using LLMs for time series highlights the modality gap and the need for specialized representations and objectives. You cannot reliably paste raw time series into a text model and expect robust results.
+Logs, time series, and sensors are numbers and events, not natural language.
 
-3. Objective mismatch.  
-   LLMs are trained to predict the next token. But operational systems need models optimized for anomaly detection, root cause extraction, forecasting, and control.
+2. Weak temporal understanding without tailored design.
 
-4. High cost of wrong answers.  
-   In industrial, energy, and security contexts, hallucinations and overconfident guesses are unacceptable.
+[Research](https://www.ijcai.org/proceedings/2024/0921.pdf) on using LLMs for time series highlights the modality gap and the need for specialized representations and objectives. You cannot reliably paste raw time series into a text model and expect robust results.
 
-5. Data privacy and infrastructure constraints.  
-   Sensitive logs and telemetry often cannot be freely shared with external model providers.
+3. Objective mismatch.
+
+LLMs are trained to predict the next token. But operational systems need models optimized for anomaly detection, root cause extraction, forecasting, and control.
+
+4. High cost of wrong answers.
+
+In industrial, energy, and security contexts, hallucinations and overconfident guesses are unacceptable.
+
+5. Data privacy and infrastructure constraints.
+
+Sensitive logs and telemetry often cannot be freely shared with external model providers.
 
 <div className="mb-6">
   <u>Why specialized "foundation models on raw data" win</u>
@@ -91,22 +96,26 @@ They break for five simple reasons:
 
 These new models outperform general LLMs because they are built around the reality of machine data:
 
-- They learn the grammar of systems, not just language.  
-  A power grid, a factory line, or a cloud environment has repeatable operational signatures.
+- They learn the grammar of systems, not just language.
 
-- They incorporate domain constraints.  
-  Physics, network topology, control rules, or transactional behavior patterns can be encoded into training and evaluation frameworks.
+A power grid, a factory line, or a cloud environment has repeatable operational signatures.
 
-- They benefit from high frequency, high volume feedback loops.  
-  When a model lives inside a production environment, it gets constant signal on whether it predicted a failure or missed one.
+- They incorporate domain constraints.
 
-- They create compounding data moats.  
-  Each deployment produces better labeled events, which improves future detection and prediction.
+Physics, network topology, control rules, or transactional behavior patterns can be encoded into training and evaluation frameworks.
+
+- They benefit from high frequency, high volume feedback loops.
+
+When a model lives inside a production environment, it gets constant signal on whether it predicted a failure or missed one.
+
+- They create compounding data moats.
+
+Each deployment produces better labeled events, which improves future detection and prediction.
 
 Gartner's macro forecast aligns with this thesis: organizations are expected to implement far more task-specific or domain models than general-purpose LLMs by 2027, indicating a broad shift toward specialized AI in production. Indeed, moving from models where pattern extraction is a byproduct of generation to models optimized for pattern discovery as the primary output will be key to success.
 
 <div className="mb-6">
-  <p> Meet the early archetypes </p>
+  <p> Meet the early archetypes: </p>
 </div>
 
 ### Conway (pattern discovery across systems)
@@ -171,17 +180,17 @@ Even inside the category of general-purpose models, users are actively splitting
 
 Recent market data shows this clearly:
 
-- Gemini's momentum.
+- Gemini's momentum
 
-  Sensor Tower data reported that ChatGPT's global monthly active users grew only around 6 percent from August to November 2025, while Gemini grew roughly [30 percent in the same period](https://techcrunch.com/2025/12/05/chatgpts-user-growth-has-slowed-report-finds/). Reporting attributes a meaningful part of Gemini's adoption to its image capabilities, including Google's Nano Banana model. Users are choosing it because it feels better for multimodal tasks.
+Sensor Tower data reported that ChatGPT's global monthly active users grew only around 6 percent from August to November 2025, while Gemini grew roughly [30 percent in the same period](https://techcrunch.com/2025/12/05/chatgpts-user-growth-has-slowed-report-finds/). Reporting attributes a meaningful part of Gemini's adoption to its image capabilities, including Google's Nano Banana model. Users are choosing it because it feels better for multimodal tasks.
 
-- Distribution shapes preference.
+- Distribution shapes preference
 
-  The same reporting notes that roughly twice as many U.S. Android users engage with Gemini through the Android operating system as through the standalone app. Lower friction beats ideology. People use what works and what is already there.
+The same reporting notes that roughly twice as many U.S. Android users engage with Gemini through the Android operating system as through the standalone app. Lower friction beats ideology. People use what works and what is already there.
 
-- OpenAI's competitive response.
+- OpenAI's competitive response
 
-  Reuters reported that OpenAI issued an internal code red and rapidly pushed GPT-5.2 amid pressure from Gemini 3. That is what real competition looks like when users can switch models based on quality.
+Reuters reported that OpenAI issued an internal code red and rapidly pushed GPT-5.2 amid pressure from Gemini 3. That is what real competition looks like when users can switch models based on quality.
 
 If general-purpose AI truly converged, none of this would be happening.
 
@@ -189,11 +198,11 @@ Claude proves "best tool for the job" wins
 
 Anthropic's Claude provides even clearer evidence.
 
-- Developer pull.
+- Developer pull
 
 Anthropic announced that Claude Code reached a one billion dollar annualized revenue run rate within six months. Developers are not paying because Claude is a generic chatbot. They are paying because it feels better for coding workflows.
 
-- Enterprise adoption.
+- Enterprise adoption
 
 Reuters reported that Accenture entered a multi-year partnership with Anthropic and planned to train around [30,000 employees on Claude](https://www.reuters.com/business/accenture-anthropic-strike-multi-year-partnership-boost-ai-adoption-2025-12-09/). This highlights real enterprise trust, especially in coding and regulated environments.
 

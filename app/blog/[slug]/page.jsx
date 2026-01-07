@@ -63,16 +63,18 @@ const MdxComponents = {
   ul: (props) => (
     <ul
       {...props}
-      className="list-disc list-inside text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6 space-y-2"
+      className="list-disc list-outside pl-6 text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
   ol: (props) => (
     <ol
       {...props}
-      className="list-decimal list-inside text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6 space-y-2"
+      className="list-decimal list-outside pl-6 text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
-  li: (props) => <li {...props} className="text-gray-800 leading-relaxed" />,
+  li: (props) => (
+    <li {...props} className="text-gray-800 leading-relaxed list-item" />
+  ),
   iframe: (props) => (
     <div className="relative pb-[56.25%] h-0 max-w-2xl mx-auto my-6 rounded-lg overflow-hidden">
       <iframe
