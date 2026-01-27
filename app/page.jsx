@@ -91,12 +91,12 @@ export default async function Home() {
               title="UniversalRAG"
               description="making retrieval work across text, images, and video"
             />
-            <SectionTitle title="Korean" className="mt-20" />
+            {/* <SectionTitle title="Korean" className="mt-20" />
             <MiddleTextBlock
               title="구의 증명 by 최진영"
               description="grief, love, greed, and what makes us human"
               className="font-gowunBatang sm:text-lg text-xs 2xl:text-xl font-semibold"
-            />
+            /> */}
           </section>
           {/* 5) What I've been learning */}
           <section
