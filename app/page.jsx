@@ -84,45 +84,18 @@ export default async function Home() {
           >
             <SectionTitle title="currently reading" />
             <MiddleTextBlock
-              title="Human Acts by Han Kang"
-              description="the military dictatorship and the Gwangju Uprising"
+              title="Learning Latent Action World Models in the Wild"
+              description="how models learn physics from raw video without labels"
             />
             <MiddleTextBlock
-              title="Principals of Plant Breeding and Genetics by George Acquaah"
-              description="fundamentals of plant breeding (reading for startup)"
-            />
-            <MiddleTextBlock
-              title="Engineering in Plain Sight by Grady Hillhouse"
-              description="overlooked infrastructure and everyday engineering"
-            />
-            <MiddleTextBlock
-              title="The Coming Wave by Michael & Mustafa"
-              description="the future of tech and its impact on society"
-            />
-            <MiddleTextBlock
-              title="Full Stack Development by Juha Hinkula"
-              description="building applications with React and Spring Boot"
+              title="UniversalRAG"
+              description="making retrieval work across text, images, and video"
             />
             <SectionTitle title="Korean" className="mt-20" />
             <MiddleTextBlock
-              title="실리콘밸리는 무엇을 기획하고 개발하는가 by Han"
-              description="how to build customer-centric products with psychology"
+              title="구의 증명 by 최진영"
+              description="grief, love, greed, and what makes us human"
               className="font-gowunBatang sm:text-lg text-xs 2xl:text-xl font-semibold"
-            />
-            <MiddleTextBlock
-              title="어떤 생각들은 나의 세계가 된다 by 이충녕"
-              description="philosophical questions and answers for everyday life"
-              className="font-gowunBatang text-xs sm:text-lg 2xl:text-xl font-semibold"
-            />
-            <MiddleTextBlock
-              title="뇌, 마케팅의 비밀을 열다 by Hans-Georg"
-              description="how to execute effective marketing with psychology"
-              className="font-gowunBatang text-xs sm:text-lg 2xl:text-xl font-semibold"
-            />
-            <MiddleTextBlock
-              title="가장 젊은 날의 철학 by 이충녕"
-              description="philosophical questions and answers for the youth"
-              className="font-gowunBatang text-xs sm:text-lg 2xl:text-xl font-semibold"
             />
           </section>
           {/* 5) What I've been learning */}

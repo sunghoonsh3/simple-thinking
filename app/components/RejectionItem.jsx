@@ -66,7 +66,6 @@ export default function RejectionItem({
       </div>
 
       {/* Email Modal - Positioned to not jump too high */}
-      {/* Email Modal */}
       {showEmail && rejectionData && (
         <div className="absolute top-10 left-0 w-96 bg-white border border-gray-200 rounded-lg shadow-xl transition-all duration-300 ease-out z-50">
           {/* Email Header */}

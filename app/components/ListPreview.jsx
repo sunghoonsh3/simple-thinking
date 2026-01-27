@@ -5,13 +5,17 @@ export default function ListPreview({
   description = "",
   date = "",
   recommendation = "",
+  isKorean = false,
   className = "",
 }) {
   return (
     <div
       className={clsx(
-        "flex justify-center mt-10 font-lateef font-normal text-lg sm:text-xl md:text-2xl lg:text-3xl",
-        className
+        "flex justify-center mt-10 font-normal",
+        isKorean
+          ? "font-gowunBatang sm:text-lg text-xs 2xl:text-xl font-semibold"
+          : "font-lateef text-lg sm:text-xl md:text-2xl lg:text-3xl",
+        className,
       )}
     >
       {/* Flexbox for Equal Spacing */}
@@ -23,17 +27,38 @@ export default function ListPreview({
       >
         {/* Left Column (Title + Description) */}
         <div className="flex-1 pr-4 max-w-44 sm:max-w-none">
-          <h2 className="leading-snug text-lg sm:text-xl md:text-2xl 2xl:text-3xl">
+          <h2
+            className={clsx(
+              "leading-snug",
+              isKorean
+                ? "text-xs sm:text-lg 2xl:text-xl"
+                : "text-lg sm:text-xl md:text-2xl 2xl:text-3xl",
+            )}
+          >
             {title}
           </h2>
-          <p className="text-descriptionGray mt-1 text-base sm:text-lg md:text-xl 2xl:text-3xl">
+          <p
+            className={clsx(
+              "text-descriptionGray mt-1",
+              isKorean
+                ? "text-xs sm:text-base 2xl:text-lg"
+                : "text-base sm:text-lg md:text-xl 2xl:text-3xl",
+            )}
+          >
             {description}
           </p>
         </div>
 
         {/* Right Column (Recommendation) */}
         <div className="text-left max-w-20 sm:max-w-none">
-          <h2 className="leading-snug text-lg sm:text-xl md:text-2xl 2xl:text-3xl">
+          <h2
+            className={clsx(
+              "leading-snug",
+              isKorean
+                ? "text-xs sm:text-lg 2xl:text-xl"
+                : "text-lg sm:text-xl md:text-2xl 2xl:text-3xl",
+            )}
+          >
             {recommendation} {date}
           </h2>
         </div>
