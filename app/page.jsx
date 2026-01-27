@@ -99,13 +99,7 @@ export default async function Home() {
             /> */}
           </section>
           {/* 5) What I've been learning */}
-          <section
-            className="
-              h-screen w-full
-              mt-60
-              lg:mt-96
-            "
-          >
+          <section>
             <SectionTitle title="what i've been learning" />
             <ListPreview
               title="spring boot 3"
