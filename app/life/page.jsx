@@ -17,67 +17,82 @@ export const metadata = {
 async function CurrentOKRsSection() {
   const allPosts = await getAllPosts();
 
-  // Filter for current month (April) OKRs using slug pattern
+  const now = new Date();
+  const currentMonth = now.getMonth(); // 0-11
+  const currentYear = now.getFullYear();
+
   const currentOKRs = allPosts
-    .filter(
-      (post) =>
-        post.metadata?.category === "okrs" && post.slug.startsWith("apr-okr-")
-    )
+    .filter((post) => {
+      if (post.metadata?.category !== "okrs") return false;
+
+      const postDate = new Date(post.metadata.date);
+      return (
+        postDate.getMonth() === currentMonth &&
+        postDate.getFullYear() === currentYear
+      );
+    })
     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
     .slice(0, 4);
 
-  // Get count of past OKRs for the archive link (all non-April OKRs)
-  const pastOKRsCount = allPosts.filter(
-    (post) =>
-      post.metadata?.category === "okrs" && !post.slug.startsWith("apr-okr-")
-  ).length;
+  // Get count of past OKRs for the archive link (different month OR different year)
+  const pastOKRsCount = allPosts.filter((post) => {
+    if (post.metadata?.category !== "okrs") return false;
+    const postDate = new Date(post.metadata.date);
+    return !(
+      postDate.getMonth() === currentMonth &&
+      postDate.getFullYear() === currentYear
+    );
+  }).length;
+
+  // Dynamic title based on current month
+  const currentMonthName = now
+    .toLocaleString("en", { month: "long" })
+    .toLowerCase();
 
   return (
     <section className="w-full">
       {/* Title only */}
-      <SectionTitle title="april okrs" alignment="left" />
+      <SectionTitle title={`${currentMonthName} okrs`} alignment="left" />
 
       {/* Display current OKRs */}
       {currentOKRs.length > 0 ? (
-        <>
-          {currentOKRs.map((post) => (
-            <StackBlogPreview
-              key={post.slug}
-              title={post.metadata.title}
-              date={post.metadata.date}
-              content={post.preview}
-              slug={post.slug}
-            />
-          ))}
-
-          {/* Archive link at the bottom */}
-          {pastOKRsCount > 0 && (
-            <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mt-10 mb-4 text-left">
-              <Link
-                href="/life/okrs-archive"
-                className="font-lateef text-blue-500 hover:text-blue-700 transition-colors text-lg inline-flex items-center"
-              >
-                view all past okrs ({pastOKRsCount})
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-          )}
-        </>
+        currentOKRs.map((post) => (
+          <StackBlogPreview
+            key={post.slug}
+            title={post.metadata.title}
+            date={post.metadata.date}
+            content={post.preview}
+            slug={post.slug}
+          />
+        ))
       ) : (
         <p className="text-center">No current OKRs found.</p>
+      )}
+
+      {/* Archive link - now OUTSIDE the conditional, always shows if there are past OKRs */}
+      {pastOKRsCount > 0 && (
+        <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mt-10 mb-4 text-left">
+          <Link
+            href="/life/okrs-archive"
+            className="font-lateef text-blue-500 hover:text-blue-700 transition-colors text-lg inline-flex items-center"
+          >
+            view all past okrs ({pastOKRsCount})
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        </div>
       )}
     </section>
   );

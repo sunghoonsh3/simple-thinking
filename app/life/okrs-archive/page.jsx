@@ -29,7 +29,7 @@ function NoUnderlineSectionTitle({
           "justify-center": alignment === "center",
           "justify-end": alignment === "right",
         },
-        className
+        className,
       )}
     >
       <p className="font-lateef font-normal">{title}</p>
@@ -41,90 +41,39 @@ function NoUnderlineSectionTitle({
 async function OKRsArchiveContent() {
   const allPosts = await getAllPosts();
 
-  // Get all OKRs posts except current month (April)
+  const now = new Date();
+  const currentMonth = now.getMonth(); // 0-11
+  const currentYear = now.getFullYear();
+
+  // Get all OKRs posts except current month/year
   const allOKRs = allPosts
-    .filter(
-      (post) =>
-        post.metadata?.category === "okrs" && !post.slug.startsWith("apr-okr-")
-    )
+    .filter((post) => {
+      if (post.metadata?.category !== "okrs") return false;
+
+      const postDate = new Date(post.metadata.date);
+      // Exclude posts from current month AND year
+      return !(
+        postDate.getMonth() === currentMonth &&
+        postDate.getFullYear() === currentYear
+      );
+    })
     .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date));
 
-  // Group posts by month based on slug prefix (e.g., feb-okr-, mar-okr-)
+  // Group posts by month-year based on actual date
   const groupedOKRs = {};
 
-  // Month mapping for display
-  const monthMap = {
-    jan: "January",
-    feb: "February",
-    mar: "March",
-    apr: "April",
-    may: "May",
-    jun: "June",
-    jul: "July",
-    aug: "August",
-    sep: "September",
-    oct: "October",
-    nov: "November",
-    dec: "December",
-  };
-
-  // Improved month detection with better handling of edge cases
   allOKRs.forEach((post) => {
-    const slug = post.slug.toLowerCase();
+    const postDate = new Date(post.metadata.date);
+    const monthYear = postDate.toLocaleString("en", {
+      month: "long",
+      year: "numeric",
+    }); // e.g., "March 2025"
 
-    // More reliable month detection
-    let monthName = null;
-
-    // Try to match three-letter month abbreviations
-    Object.entries(monthMap).forEach(([abbr, fullName]) => {
-      if (slug.startsWith(abbr.toLowerCase())) {
-        monthName = fullName;
-      }
-    });
-
-    // If no match by abbreviation, try to match by first three letters of full month name
-    if (!monthName) {
-      Object.values(monthMap).forEach((fullName) => {
-        const firstThreeLetters = fullName.toLowerCase().substring(0, 3);
-        if (
-          slug.startsWith(firstThreeLetters) ||
-          slug.includes(firstThreeLetters)
-        ) {
-          monthName = fullName;
-        }
-      });
+    if (!groupedOKRs[monthYear]) {
+      groupedOKRs[monthYear] = [];
     }
 
-    // Special case for February (check for typo "feburary")
-    if (!monthName && (slug.startsWith("febu") || slug.includes("febu"))) {
-      monthName = "February";
-    }
-
-    // If we still don't have a match, use a fallback
-    if (!monthName) {
-      // If it looks like a month prefix but not recognized - use first three letters
-      if (slug.includes("okr") && slug.match(/^[a-z][a-z][a-z]/)) {
-        const possibleMonth = slug.substring(0, 3);
-        monthName = monthMap[possibleMonth] || "Uncategorized";
-      } else {
-        // Last resort fallback
-        const slugParts = slug.split("-");
-        if (slugParts.length > 0) {
-          // Capitalize first letter as fallback
-          monthName =
-            slugParts[0].charAt(0).toUpperCase() + slugParts[0].slice(1);
-        } else {
-          monthName = "Uncategorized";
-        }
-      }
-    }
-
-    // Add post to appropriate month group
-    if (!groupedOKRs[monthName]) {
-      groupedOKRs[monthName] = [];
-    }
-
-    groupedOKRs[monthName].push(post);
+    groupedOKRs[monthYear].push(post);
   });
 
   return (
@@ -173,10 +122,10 @@ async function OKRsArchiveContent() {
               : new Date(0);
             return dateB - dateA; // Descending order (newest first)
           })
-          .map(([month, posts]) => (
-            <section key={month} className="mt-20 first:mt-10">
-              {/* Month title using regular SectionTitle with left alignment */}
-              <SectionTitle title={month} alignment="left" />
+          .map(([monthYear, posts]) => (
+            <section key={monthYear} className="mt-20 first:mt-10">
+              {/* Month-Year title using regular SectionTitle with left alignment */}
+              <SectionTitle title={monthYear} alignment="left" />
 
               {/* Posts list - each post will have its own margins from StackBlogPreview */}
               {posts.map((post) => (
