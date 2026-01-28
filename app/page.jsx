@@ -102,24 +102,19 @@ export default async function Home() {
           <section>
             <SectionTitle title="what i've been learning" />
             <ListPreview
-              title="spring boot 3"
-              description="learning it to make a website"
+              title="biology"
+              description="i am learning biology in general, espescially longevity & alphafold 3"
               date="january ~"
               className="mt-[100px]"
             />
             <ListPreview
-              title="guitar"
-              description="i can prolly play my favorite song someday"
-              date="january ~"
-            />
-            <ListPreview
-              title="typescript"
-              description="need it for my intership"
+              title="coding"
+              description="i lowk vibe code too much. needa learn to code better"
               date="january ~"
             />
             <ListPreview
               title="japanese"
-              description="so i can talk better with my friends"
+              description="i am going to japan this year — might as well learn how to speak :)"
               date="january ~"
             />
           </section>
