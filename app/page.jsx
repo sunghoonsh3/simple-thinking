@@ -92,6 +92,10 @@ export default async function Home() {
               description="making retrieval work across text, images, and video"
             />
             <MiddleTextBlock
+              title="Deep Learning"
+              description="by the goat Ian Goodfellow"
+            />
+            <MiddleTextBlock
               title="Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG"
               description="production methods for reliability using prompting, fine-tuning, and retrieval"
             />
