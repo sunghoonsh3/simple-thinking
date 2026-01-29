@@ -91,6 +91,10 @@ export default async function Home() {
               title="UniversalRAG"
               description="making retrieval work across text, images, and video"
             />
+            <MiddleTextBlock
+              title="Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG"
+              description="production methods for reliability using prompting, fine-tuning, and retrieval"
+            />
             {/* <SectionTitle title="Korean" className="mt-20" />
             <MiddleTextBlock
               title="구의 증명 by 최진영"
