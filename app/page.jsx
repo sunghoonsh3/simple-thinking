@@ -88,6 +88,10 @@ export default async function Home() {
               description="how models learn physics from raw video without labels"
             />
             <MiddleTextBlock
+              title="Modeling protein–small molecule conformational ensembles with PLACER"
+              description="predicting how drugs and enzymes move and bind by generating atomic-level ensembles"
+            />
+            <MiddleTextBlock
               title="UniversalRAG"
               description="making retrieval work across text, images, and video"
             />
