@@ -72,39 +72,39 @@ export default function ReplyItem({ company, show, className = "" }) {
       {/* Thread connector */}
       <div className="flex items-start space-x-4 mb-3">
         <div className="flex flex-col items-center">
-          <div className="w-px h-8 bg-gray-200"></div>
+          <div className="w-px h-8 bg-gray-200 dark:bg-gray-700"></div>
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-          <div className="w-px h-4 bg-gray-200"></div>
+          <div className="w-px h-4 bg-gray-200 dark:bg-gray-700"></div>
         </div>
 
         <div className="flex-1">
           {/* Reply header */}
-          <div className="text-neutral-600 font-lateef text-lg italic mb-2">
+          <div className="text-neutral-600 dark:text-neutral-400 font-lateef text-lg italic mb-2">
             {replyContent.subject}
           </div>
         </div>
       </div>
 
       {/* Reply email content */}
-      <div className="ml-6 bg-green-50 border border-green-200 rounded-lg shadow-sm">
+      <div className="ml-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg shadow-sm">
         {/* Reply header */}
-        <div className="flex items-center justify-between p-4 border-b border-green-200 bg-green-100 rounded-t-lg">
+        <div className="flex items-center justify-between p-4 border-b border-green-200 dark:border-green-800 bg-green-100 dark:bg-green-900/30 rounded-t-lg">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-xs font-bold">💌</span>
+              <span className="text-white text-xs font-bold">{"\uD83D\uDC8C"}</span>
             </div>
             <div>
-              <div className="text-sm font-medium text-gray-900">
+              <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {replyContent.subject}
               </div>
-              <div className="text-xs text-gray-600">{replyContent.email}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-400">{replyContent.email}</div>
             </div>
           </div>
         </div>
 
         {/* Reply body */}
-        <div className="p-4 space-y-3 text-sm text-gray-700 leading-relaxed">
-          <p className="font-medium text-gray-600">
+        <div className="p-4 space-y-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="font-medium text-gray-600 dark:text-gray-400">
             {replyContent.author} just replied:
           </p>
 
@@ -112,19 +112,19 @@ export default function ReplyItem({ company, show, className = "" }) {
             <p key={index}>{paragraph}</p>
           ))}
 
-          <div className="pt-3 border-t border-green-200">
-            <p className="text-xs text-gray-500 whitespace-pre-line">
+          <div className="pt-3 border-t border-green-200 dark:border-green-800">
+            <p className="text-xs text-gray-500 dark:text-gray-400 whitespace-pre-line">
               {replyContent.signature}
             </p>
           </div>
         </div>
 
         {/* Reply footer */}
-        <div className="px-4 py-3 bg-green-100 rounded-b-lg border-t border-green-200">
-          <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="px-4 py-3 bg-green-100 dark:bg-green-900/30 rounded-b-lg border-t border-green-200 dark:border-green-800">
+          <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
             <span>Just now</span>
             <div className="flex space-x-2">
-              <span className="px-2 py-1 bg-green-200 text-green-800 rounded text-xs">
+              <span className="px-2 py-1 bg-green-200 dark:bg-green-800 text-green-800 dark:text-green-300 rounded text-xs">
                 Encouragement
               </span>
             </div>

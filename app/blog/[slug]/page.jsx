@@ -55,7 +55,7 @@ const MdxComponents = {
   p: (props) => (
     <p
       {...props}
-      className="text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
+      className="text-gray-800 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
   h3: (props) => <h3 {...props} className="text-lg font-semibold mb-4" />,
@@ -63,17 +63,17 @@ const MdxComponents = {
   ul: (props) => (
     <ul
       {...props}
-      className="list-disc list-outside pl-6 text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
+      className="list-disc list-outside pl-6 text-gray-800 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
   ol: (props) => (
     <ol
       {...props}
-      className="list-decimal list-outside pl-6 text-gray-800 leading-relaxed max-w-2xl mx-auto mb-6"
+      className="list-decimal list-outside pl-6 text-gray-800 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto mb-6"
     />
   ),
   li: (props) => (
-    <li {...props} className="text-gray-800 leading-relaxed list-item" />
+    <li {...props} className="text-gray-800 dark:text-gray-200 leading-relaxed list-item" />
   ),
   iframe: (props) => (
     <div className="relative pb-[56.25%] h-0 max-w-2xl mx-auto my-6 rounded-lg overflow-hidden">
@@ -95,25 +95,25 @@ export default async function BlogPost({ params: paramsPromise }) {
   if (!post) return notFound();
 
   return (
-    <div className="min-h-screen m-3 sm:m-0 bg-white">
+    <div className="min-h-screen m-3 sm:m-0 bg-background">
       <main className="max-w-2xl mx-auto px-4 mt-10 lg:mt-20">
-        <article className="prose prose-lg mx-auto">
+        <article className="prose prose-lg dark:prose-invert mx-auto">
           {/* Title */}
           <h1 className="text-lg sm:text-xl lg:text-3xl font-serif mb-6 lg:mb-12">
             {post.metadata?.title || "Untitled"}
           </h1>
           {/* Date and Category */}
           <div className="flex items-center font-serif text-md lg:text-lg mb-6 lg:mb-12 space-x-4">
-            <time className="text-gray-600">
+            <time className="text-gray-600 dark:text-gray-400">
               {post.metadata?.date || "Unknown Date"}
             </time>
-            <span className="text-gray-400">•</span>
-            <span className="text-gray-600 tracking-widest uppercase">
+            <span className="text-gray-400 dark:text-gray-500">•</span>
+            <span className="text-gray-600 dark:text-gray-400 tracking-widest uppercase">
               {post.metadata?.category || "Uncategorized"}
             </span>
           </div>
           {/* Content */}
-          <div className="prose prose-lg font-serif text-md lg:text-lg mx-auto">
+          <div className="prose prose-lg dark:prose-invert font-serif text-md lg:text-lg mx-auto">
             <MDXRemote source={post.content} components={MdxComponents} />
           </div>
         </article>

@@ -71,14 +71,14 @@ export default function RejectionTips({ className = "" }) {
         <div className="space-y-6">
           {tips.map((section, index) => (
             <div key={section.category} className="space-y-3">
-              <h3 className="text-sm font-medium text-neutral-700 uppercase tracking-wide">
+              <h3 className="text-sm font-medium text-neutral-700 dark:text-neutral-300 uppercase tracking-wide">
                 {section.category}
               </h3>
               <ul className="space-y-2">
                 {section.items.map((tip, tipIndex) => (
                   <li key={tipIndex} className="flex items-start space-x-2">
-                    <span className="text-neutral-400 text-xs mt-1.5">•</span>
-                    <span className="text-sm text-neutral-600 leading-relaxed">
+                    <span className="text-neutral-400 dark:text-neutral-500 text-xs mt-1.5">•</span>
+                    <span className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                       {tip}
                     </span>
                   </li>

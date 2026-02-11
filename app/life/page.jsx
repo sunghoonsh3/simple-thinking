@@ -74,7 +74,7 @@ async function CurrentOKRsSection() {
         <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mt-10 mb-4 text-left">
           <Link
             href="/life/okrs-archive"
-            className="font-lateef text-blue-500 hover:text-blue-700 transition-colors text-lg inline-flex items-center"
+            className="font-lateef text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-lg inline-flex items-center"
           >
             view all past okrs ({pastOKRsCount})
             <svg

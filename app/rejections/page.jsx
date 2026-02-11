@@ -32,12 +32,12 @@ export default function Rejections() {
               </div> */}
 
               <h1 className="text-2xl md:text-3xl tracking-[0.1em]">
-                <span className="font-serif italic text-gray-800">
+                <span className="font-serif italic text-gray-800 dark:text-gray-200">
                   felix culpa
                 </span>
               </h1>
 
-              <div className="mt-8 space-y-1 text-xs text-gray-500">
+              <div className="mt-8 space-y-1 text-xs text-gray-500 dark:text-gray-400">
                 <p>the blessed fall</p>
               </div>
             </div>

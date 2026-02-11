@@ -1,4 +1,5 @@
 import Header from "@/app/components/Header";
+import ThemeProvider from "@/app/components/ThemeProvider";
 import { Lateef, Gowun_Batang } from "next/font/google";
 import "./globals.css";
 
@@ -28,15 +29,29 @@ export const metadata = {
   },
 };
 
+const themeScript = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e) {}
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${lateef.variable} ${gowunBatang.variable} `}>
+    <html lang="en" className={`${lateef.variable} ${gowunBatang.variable}`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
-      <body>
-        <Header />
-        {children}
+      <body className="transition-colors duration-300">
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

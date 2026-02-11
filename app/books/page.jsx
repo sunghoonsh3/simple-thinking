@@ -45,7 +45,7 @@ export default function Books() {
                   <div className="flex w-full lg:max-w-[1100px] 2xl:max-w-[1500px] px-4 sm:px-6 lg:px-12">
                     <Link
                       href="/books/past-books"
-                      className="text-blue-500 hover:text-blue-700 transition-colors text-lg inline-flex items-center"
+                      className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-lg inline-flex items-center"
                     >
                       view all past read books ({pastBooksCount})
                       <svg

@@ -45,12 +45,12 @@ async function PostsSection({ subcategory, title }) {
 function PostsSectionSkeleton() {
   return (
     <section className="w-full pb-20">
-      <div className="h-8 w-64 bg-gray-200 animate-pulse mb-6"></div>
+      <div className="h-8 w-64 bg-gray-200 dark:bg-gray-700 animate-pulse mb-6"></div>
       {[1, 2, 3, 4].map((i) => (
         <div key={i} className="mb-8">
-          <div className="h-6 w-3/4 bg-gray-200 animate-pulse mb-2"></div>
-          <div className="h-4 w-1/4 bg-gray-200 animate-pulse mb-4"></div>
-          <div className="h-16 w-full bg-gray-200 animate-pulse"></div>
+          <div className="h-6 w-3/4 bg-gray-200 dark:bg-gray-700 animate-pulse mb-2"></div>
+          <div className="h-4 w-1/4 bg-gray-200 dark:bg-gray-700 animate-pulse mb-4"></div>
+          <div className="h-16 w-full bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
         </div>
       ))}
     </section>
@@ -68,11 +68,11 @@ export default async function Politics() {
             <div className="flex items-center justify-center min-h-screen">
               <div className="relative font-lateef text-2xl lg:text-3xl text-nowrap">
                 {/* Shadow Effect */}
-                <p className="absolute top-1 left-1 text-gray-300 rotate-[-20deg]">
+                <p className="absolute top-1 left-1 text-gray-300 dark:text-gray-700 rotate-[-20deg]">
                   i like the noise of democracy
                 </p>
                 {/* Main Text */}
-                <p className="text-black rotate-[-20deg]">
+                <p className="text-foreground rotate-[-20deg]">
                   i like the noise of democracy
                 </p>
               </div>

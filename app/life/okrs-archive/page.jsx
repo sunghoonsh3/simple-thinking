@@ -82,7 +82,7 @@ async function OKRsArchiveContent() {
       <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mb-10">
         {/* <Link
           href="/life"
-          className="text-blue-500 hover:text-blue-700 transition-colors text-sm font-medium flex items-center"
+          className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-sm font-medium flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ function ArchiveSkeleton() {
       <div className="mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] mb-10">
         <Link
           href="/life"
-          className="text-blue-500 hover:text-blue-700 transition-colors text-sm font-medium flex items-center"
+          className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors text-sm font-medium flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
@@ -24,7 +25,7 @@ export default function Header() {
   };
 
   return (
-    <header className="text-black m-3 sm:m-0 p-4 pt-10">
+    <header className="text-foreground m-3 sm:m-0 p-4 pt-10">
       <div className="container w-full max-w-full sm:max-w-screen-lg sm:mx-auto flex justify-between items-center font-lateef">
         {/* Logo Section */}
         <div className="text-2xl font-normal text-nowrap sm:ml-12">
@@ -34,19 +35,22 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <button
-          onClick={toggleMenu}
-          className="text-2xl md:hidden" // Hide on larger screens
-          aria-label="Toggle Menu"
-        >
-          {isMenuOpen ? "x" : "💭"} {/* Toggle between emojis */}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={toggleMenu}
+            className="text-2xl"
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? "x" : "\uD83D\uDCAD"} {/* Toggle between emojis */}
+          </button>
+        </div>
 
         {/* Navigation */}
         <nav className="hidden md:block">
           {" "}
           {/* Hide on mobile, show on larger screens */}
-          <ul className="flex space-x-6 text-2xl font-lateef mr-12 font-normal">
+          <ul className="flex space-x-6 text-2xl font-lateef mr-12 font-normal items-center">
             {[
               "books",
               "politics",
@@ -70,12 +74,15 @@ export default function Header() {
                 </Link>
               </li>
             ))}
+            <li>
+              <ThemeToggle />
+            </li>
           </ul>
         </nav>
 
         {/* Mobile Menu (Conditional Rendering) */}
         {isMenuOpen && (
-          <div className="absolute top-24 right-0 bg-white w-full z-50 shadow-lg md:hidden">
+          <div className="absolute top-24 right-0 bg-background w-full z-50 shadow-lg dark:shadow-gray-900/50 md:hidden">
             <ul className="flex flex-col space-y-4 text-2xl font-lateef p-4">
               {[
                 "books",

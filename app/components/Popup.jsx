@@ -26,15 +26,11 @@ export default function Popup() {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded shadow-lg text-center max-w-sm font-lateef font-normal">
+      <div className="bg-white dark:bg-gray-900 p-6 rounded shadow-lg dark:shadow-gray-900/50 text-center max-w-sm font-lateef font-normal text-foreground">
         <h2 className="mb-4 text-2xl">hey there, thx for visiting my blog!</h2>
         <p className="mb-4 text-xl">
-          the website’s migrating from myexpositions.com, so it’s still a bit
+          the website's migrating from myexpositions.com, so it's still a bit
           messy.
-        </p>
-        <p className="mb-4 text-xl">
-          {" "}
-          it also doesn't support dark mode yet. sorry 'bout that! 🙃
         </p>
         <div className="flex gap-4 justify-center">
           <button
@@ -45,7 +41,7 @@ export default function Popup() {
           </button>
           <button
             onClick={handleDontShowAgain}
-            className="px-4 py-2 bg-gray-200 text-black rounded text-xl"
+            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-gray-200 rounded text-xl"
           >
             don't show again
           </button>
