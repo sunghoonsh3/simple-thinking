@@ -99,6 +99,53 @@ async function RealLifeLessonsSection() {
   );
 }
 
+// Static section for companies/people I follow
+function CompaniesSection() {
+  const companies = [
+    { name: "convoke", url: "https://www.convoke.bio/" },
+    { name: "conway", url: "https://www.conway.ai/" },
+    { name: "isomorphic labs", url: "https://www.isomorphiclabs.com/" },
+    {
+      name: "cellular intelligence",
+      url: "https://www.cellularintelligence.com/",
+    },
+    { name: "alphaz", url: "https://alpha-z.ai/" },
+    { name: "genmd", url: "https://www.genmd.ai/" },
+    { name: "arc institute", url: "https://arcinstitute.org/" },
+    { name: "baker lab", url: "https://www.bakerlab.org/" },
+    { name: "céline halioua", url: "https://www.celinehh.com/about" },
+    { name: "lada nuzhna", url: "https://www.ladanuzhna.xyz/" },
+    {
+      name: "leigh marie braswell",
+      url: "https://www.kleinerperkins.com/people/investors/leigh-marie-braswell/",
+    },
+  ];
+
+  return (
+    <section className="w-full h-screen">
+      <SectionTitle title="companies / people i follow" alignment="left" />
+      <ul className="flex flex-col gap-4 mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] font-lateef text-lg lg:text-xl 2xl:text-2xl mt-10">
+        {companies.map(({ name, url }) => (
+          <li key={name}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group"
+            >
+              <span>{name}</span>
+              <span
+                className="absolute bottom-0 left-0 h-px w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left"
+                style={{ backgroundColor: "#5AA8D6" }}
+              ></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 // Loading fallback component with original styling
 function SectionSkeleton({ title }) {
   return (
@@ -118,10 +165,11 @@ export default function Startup() {
           {/* Hero Section - keeping original */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
             <h1 className="text-2xl 2xl:text-3xl font-lateef">
-              building @ atti
+              i will build a generational company by 40
             </h1>
           </section>
 
+          <CompaniesSection />
           {/* <Suspense
             fallback={<SectionSkeleton title="thoughts on startup/industry" />}
           >
