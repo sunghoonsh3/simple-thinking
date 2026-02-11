@@ -107,21 +107,6 @@ export default function About() {
           </a>
         </p>
       </section>
-      <section
-        className="
-    h-screen w-full flex justify-center text-center items-center"
-      >
-        <p>
-          if u like what i do and wanna buy me&nbsp;
-          <a
-            href="https://buymeacoffee.com/tristanshin"
-            className="underline decoration-underlineBlue decoration-1 underline-offset-4"
-          >
-            a coffee
-          </a>
-          , i won’t say no hehe.
-        </p>
-      </section>
       <SubscribeModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
       <Footer />
     </main>
