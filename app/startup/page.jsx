@@ -146,6 +146,49 @@ function CompaniesSection() {
   );
 }
 
+function CrackedPplSection() {
+  const people = [
+    {
+      name: "hamza pereira",
+      url: "https://www.linkedin.com/in/hamza-pereira/",
+    },
+    { name: "john kim", url: "https://www.linkedin.com/in/dongwhi-john-kim/" },
+    { name: "boris kizenko", url: null },
+    { name: "reed graff", url: "https://www.linkedin.com/in/reedgraff/" },
+    { name: "mark evgenev", url: "https://www.linkedin.com/in/mevgenev/" },
+    { name: "hy nguyen", url: "https://www.linkedin.com/in/mrpronoun/" },
+    { name: "anish karthik", url: "https://www.linkedin.com/in/anishkarthik/" },
+  ];
+
+  return (
+    <section className="w-full h-screen">
+      <SectionTitle title="cracked ppl around me" alignment="left" />
+      <ul className="flex flex-col gap-4 mx-2 sm:mx-20 xl:mx-60 2xl:mx-[780px] font-lateef text-lg lg:text-xl 2xl:text-2xl mt-10">
+        {people.map(({ name, url }) => (
+          <li key={name}>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group"
+              >
+                <span>{name}</span>
+                <span
+                  className="absolute bottom-0 left-0 h-px w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left"
+                  style={{ backgroundColor: "#5AA8D6" }}
+                ></span>
+              </a>
+            ) : (
+              <span>{name}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 // Loading fallback component with original styling
 function SectionSkeleton({ title }) {
   return (
@@ -170,6 +213,8 @@ export default function Startup() {
           </section>
 
           <CompaniesSection />
+
+          <CrackedPplSection />
           {/* <Suspense
             fallback={<SectionSkeleton title="thoughts on startup/industry" />}
           >
