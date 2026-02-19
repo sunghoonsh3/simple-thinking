@@ -89,8 +89,15 @@ export default function About() {
     h-screen w-full flex flex-col justify-center text-center items-center"
       >
         <p className="pb-2 sm:pb-0">
-          i also run a venture-backed startup, atti, a platform that connects
-          internationals in the us!
+          i am currently building planarian.ai. it's in stealth mode.
+        </p>
+      </section>
+      <section
+        className="
+    h-screen w-full flex flex-col justify-center text-center items-center"
+      >
+        <p className="pb-2 sm:pb-0">
+          a little hint though is in the name of the company!.
         </p>
       </section>
       <section
