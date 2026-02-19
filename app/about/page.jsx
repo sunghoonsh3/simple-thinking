@@ -75,7 +75,7 @@ export default function About() {
     h-screen w-full flex flex-col justify-center text-center items-center"
       >
         <p className="pb-2 sm:pb-0">
-          i am a junior college student at the university of notre dame.
+          i am a senior college student at the university of notre dame.
         </p>
       </section>
       <section
