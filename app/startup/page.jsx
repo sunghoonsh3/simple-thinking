@@ -208,7 +208,7 @@ export default function Startup() {
           {/* Hero Section - keeping original */}
           <section className="h-[calc(100vh-110px)] flex items-center justify-center">
             <h1 className="text-2xl 2xl:text-3xl font-lateef">
-              i will build a generational company by 40
+              i will build a generational company by 25
             </h1>
           </section>
 

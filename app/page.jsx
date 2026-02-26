@@ -92,6 +92,10 @@ export default async function Home() {
               description="Developing predictive, foundation models of cellular biology by integrating multi-omics data and spatial imaging to simulate life at the molecular level."
             />
             <MiddleTextBlock
+              title="Building the Virtual Cell with AI"
+              description="Developing predictive, foundation models of cellular biology by integrating multi-omics data and spatial imaging to simulate life at the molecular level."
+            />
+            <MiddleTextBlock
               title="Modeling protein–small molecule conformational ensembles with PLACER"
               description="predicting how drugs and enzymes move and bind by generating atomic-level ensembles"
             />
