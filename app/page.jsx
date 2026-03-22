@@ -79,17 +79,13 @@ export default async function Home() {
           {/* 4) Currently reading */}
           <section
             className="
-              min-h-screen w-full 
+              min-h-screen w-full pb-20
             "
           >
             <SectionTitle title="currently reading" />
             <MiddleTextBlock
               title="Learning Latent Action World Models in the Wild"
               description="how models learn physics from raw video without labels"
-            />
-            <MiddleTextBlock
-              title="Building the Virtual Cell with AI"
-              description="Developing predictive, foundation models of cellular biology by integrating multi-omics data and spatial imaging to simulate life at the molecular level."
             />
             <MiddleTextBlock
               title="Building the Virtual Cell with AI"
@@ -119,7 +115,7 @@ export default async function Home() {
             /> */}
           </section>
           {/* 5) What I've been learning */}
-          <section>
+          <section className="min-h-screen w-full pb-20">
             <SectionTitle title="what i've been learning" />
             <ListPreview
               title="biology"
